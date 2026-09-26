@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<style>html,body{margin:0;padding:0}</style>
+<title>Ricky, Pablo y Ros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #eef0ec;
+  --surface: #fbfcfa;
+  --surface-2: #e4e7e1;
+  --ink: #14171a;
+  --muted: #5b626a;
+  --faint: #8a9098;
+  --line: #d3d8d0;
+  --ricky: #2553c7;
+  --pablo: #a8660f;
+  --ros: #0e8575;
+  --ricky-soft: #dde6fb;
+  --pablo-soft: #f5e7cf;
+  --ros-soft: #d3eee9;
+  --tie: #9aa09a;
+  --focus: #2553c7;
+  --shadow: 0 1px 0 rgba(20, 23, 26, .04), 0 8px 24px -12px rgba(20, 23, 26, .18);
+  --display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", system-ui, sans-serif;
+  --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1013; --surface: #161a1e; --surface-2: #1f2429; --ink: #e9ecee; --muted: #a0a7af; --faint: #6f777f; --line: #2a3036;
+    --ricky: #86a8ff; --pablo: #e6ac52; --ros: #45d0b9;
+    --ricky-soft: rgba(134, 168, 255, .16); --pablo-soft: rgba(230, 172, 82, .16); --ros-soft: rgba(69, 208, 185, .15);
+    --tie: #6f777f; --focus: #86a8ff; --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 28px -14px rgba(0, 0, 0, .7);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1013; --surface: #161a1e; --surface-2: #1f2429; --ink: #e9ecee; --muted: #a0a7af; --faint: #6f777f; --line: #2a3036;
+  --ricky: #86a8ff; --pablo: #e6ac52; --ros: #45d0b9;
+  --ricky-soft: rgba(134, 168, 255, .16); --pablo-soft: rgba(230, 172, 82, .16); --ros-soft: rgba(69, 208, 185, .15);
+  --tie: #6f777f; --focus: #86a8ff; --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 10px 28px -14px rgba(0, 0, 0, .7);
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 16px; padding-block: 18px 48px; display: grid; gap: 28px; }
+@media (min-width: 720px) { .wrap { padding-inline: 28px; } }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.c-ricky { --pc: var(--ricky); --ps: var(--ricky-soft); }
+.c-pablo { --pc: var(--pablo); --ps: var(--pablo-soft); }
+.c-ros { --pc: var(--ros); --ps: var(--ros-soft); }
+
+/* Cabecera */
+.masthead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.brand { font: 800 26px/1 var(--display); letter-spacing: .01em; text-transform: uppercase; display: flex; gap: .35em; flex-wrap: wrap; }
+.brand .c-ricky, .brand .c-pablo, .brand .c-ros { color: var(--pc); }
+.brand .sep { color: var(--faint); font-weight: 600; }
+.updated { font-size: 13px; color: var(--muted); }
+
+/* Hoy */
+.today { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); padding: 18px 16px 8px; display: grid; gap: 18px; }
+@media (min-width: 720px) { .today { padding: 26px 28px 12px; } }
+.today-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; }
+.eyebrow { font: 700 13px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.today-date { font: 700 clamp(26px, 6vw, 38px)/1.02 var(--display); text-transform: uppercase; letter-spacing: .01em; margin-top: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+.chip.provisional { border: 1.5px dashed var(--faint); color: var(--muted); }
+.chip.final { background: var(--surface-2); color: var(--muted); }
+.chip svg { width: 14px; height: 14px; }
+
+.board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.board .slot { padding: 12px 8px 14px; text-align: center; display: grid; gap: 2px; justify-items: center; }
+.board .slot + .slot { border-left: 1px solid var(--line); }
+.board .who { font: 700 13px/1 var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--pc); flex: none; }
+.board .num { font: 800 clamp(64px, 19vw, 112px)/.9 var(--display); color: var(--faint); font-variant-numeric: tabular-nums; }
+.board .slot.lead .num { color: var(--pc); }
+.board .tag { min-height: 22px; font-size: 12.5px; font-weight: 600; }
+.board .slot.lead .tag { color: var(--pc); }
+.pill { display: inline-block; padding: 2px 9px; border-radius: 999px; background: var(--ps); color: var(--pc); font-weight: 700; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+
+.grid-games { display: grid; }
+.grow { display: grid; grid-template-columns: minmax(0, 1.25fr) repeat(3, minmax(0, 1fr)); align-items: center; gap: 6px; padding: 9px 0; border-top: 1px solid var(--line); }
+.grow:first-child { border-top: 0; }
+.grow.head { padding: 0 0 4px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.grow.head > span:not(:first-child) { text-align: center; }
+.gname { display: grid; gap: 1px; min-width: 0; }
+.gname b { font: 700 18px/1.05 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.gname small { font-size: 12px; color: var(--muted); }
+.tcell { text-align: center; padding: 7px 2px; border-radius: 10px; font: 500 16px/1.1 var(--mono); font-variant-numeric: tabular-nums; }
+.tcell.win { background: var(--ps); color: var(--pc); font-weight: 600; box-shadow: inset 0 0 0 1.5px var(--pc); }
+.tcell.lead { box-shadow: inset 0 0 0 1.5px var(--pc); color: var(--pc); }
+.tcell.pending, .tcell.hidden { font: 500 12px/1.2 var(--body); color: var(--faint); }
+.tcell.pending { border: 1.5px dashed var(--line); }
+.tcell .hint { display: block; font: 600 10.5px/1.2 var(--body); letter-spacing: .04em; color: var(--muted); margin-top: 2px; }
+.grow .note { grid-column: 2 / -1; font-size: 12.5px; color: var(--muted); text-align: center; }
+@media (min-width: 720px) { .tcell { font-size: 18px; } .gname b { font-size: 21px; } }
+.today-foot { font-size: 12.5px; color: var(--muted); padding: 2px 0 8px; }
+
+/* Secciones */
+.section { display: grid; gap: 14px; }
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+.section-head h2 { font: 800 24px/1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.section-head p { font-size: 13px; color: var(--muted); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.cols-2 { display: grid; gap: 16px; }
+@media (min-width: 880px) { .cols-2 { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+/* Racha */
+.streaks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.streak .lbl { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.streak .big { font: 800 clamp(30px, 8vw, 42px)/1 var(--display); color: var(--pc, var(--ink)); text-transform: uppercase; margin-top: 6px; }
+.streak .sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.streak .best { font-size: 12.5px; color: var(--muted); margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+.week { display: grid; gap: 10px; }
+.week .row-lbl { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.week .days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; }
+.day { display: grid; gap: 4px; justify-items: center; }
+.day .d { font-size: 11px; color: var(--muted); line-height: 1.1; text-align: center; }
+.day .d b { display: block; font: 600 14px/1 var(--mono); color: var(--ink); }
+.sq { width: 100%; aspect-ratio: 1; max-width: 100%; border-radius: 8px; display: grid; place-items: center; font: 600 13px/1 var(--mono); color: var(--surface); }
+.sq.none { border: 1.5px dashed var(--line); color: var(--faint); background: transparent; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend .sw { width: 12px; height: 12px; border-radius: 3px; }
+
+/* Tablas */
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { padding: 9px 8px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+td.player { font-weight: 700; }
+td.player .dot { display: inline-block; margin-right: 7px; vertical-align: 1px; }
+td strong { font-size: 17px; }
+.note-sm { font-size: 12.5px; color: var(--muted); }
+
+/* Barras */
+.split { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: var(--surface-2); }
+.split i { display: block; height: 100%; }
+.h2h { display: grid; gap: 12px; }
+.h2h-row { display: grid; gap: 6px; }
+.h2h-row .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 14px; }
+.h2h-row .top b { font: 700 18px/1 var(--mono); }
+.h2h-row .pct-row { font: 600 13px/1 var(--mono); }
+
+/* Duelo */
+.seg { display: inline-flex; background: var(--surface-2); border-radius: 999px; padding: 3px; gap: 2px; }
+.seg button { border: 0; background: transparent; padding: 7px 14px; border-radius: 999px; font-weight: 600; font-size: 14px; cursor: pointer; color: var(--muted); }
+.day-seg { margin-bottom: 8px; }
+.day-seg button { padding: 5px 14px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.duel-top { display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.kpi .lbl { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.kpi .val { font: 800 clamp(30px, 8vw, 44px)/1 var(--display); margin-top: 4px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.kpi .val .c-ricky, .kpi .val .c-pablo { color: var(--pc); }
+.kpi .val small { font: 500 13px/1 var(--body); color: var(--muted); }
+.scorelines { display: grid; gap: 8px; }
+.sl { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr); align-items: center; gap: 8px; }
+.sl .side { display: flex; align-items: center; gap: 6px; font: 600 14px/1 var(--mono); }
+.sl .side.left { justify-content: flex-end; }
+.sl .bar { height: 14px; border-radius: 4px; background: var(--pc); min-width: 2px; }
+.sl .key { text-align: center; font: 800 20px/1 var(--display); }
+.sl.tie .bar { background: var(--tie); }
+.sl .zero { color: var(--faint); }
+.sl-head { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr); gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.sl-title { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.sl-head span:first-child { text-align: right; }
+.sl-head span:last-child { text-align: left; }
+
+/* Por juego y récords */
+.cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.gcard { display: grid; gap: 12px; align-content: start; }
+.gcard h3 { font: 800 22px/1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.gcard .blk { display: grid; gap: 6px; }
+.gcard .blk-lbl { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.trip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.trip > div { display: grid; gap: 1px; }
+.trip .n { font: 600 17px/1.1 var(--mono); color: var(--pc); }
+.trip .w { font-size: 12px; color: var(--muted); }
+.trip .top .n { font-weight: 700; }
+.rec-time { font: 600 34px/1 var(--mono); font-variant-numeric: tabular-nums; }
+.rec-who { font-weight: 700; color: var(--pc); }
+
+/* Gráfico */
+.chart svg { width: 100%; height: auto; display: block; }
+.chart .axis { fill: var(--muted); font: 500 11px var(--body); }
+.chart .grid { stroke: var(--line); stroke-width: 1; }
+.chart .mid { stroke: var(--faint); stroke-dasharray: 4 4; }
+.chart .line { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.chart .end { font: 700 12px var(--mono); }
+
+footer { font-size: 12.5px; color: var(--muted); display: grid; gap: 4px; border-top: 1px solid var(--line); padding-top: 14px; }
+@media (prefers-reduced-motion: no-preference) { .seg button, .sq, .bar { transition: background-color .2s, width .3s; } }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="brand" aria-label="Ricky, Pablo y Ros"><span class="c-ricky">Ricky</span><span class="sep">·</span><span class="c-pablo">Pablo</span><span class="sep">·</span><span class="c-ros">Ros</span></div>
+    <p class="updated" id="updated"></p>
+  </header>
+
+  <section class="today" id="today" aria-labelledby="today-title"></section>
+
+  <div class="cols-2">
+    <section class="section" aria-labelledby="streak-title">
+      <div class="section-head"><h2 id="streak-title">Racha y última semana</h2><p>Días válidos seguidos ganados en solitario</p></div>
+      <div id="streaks" class="streaks"></div>
+      <div id="week" class="panel week"></div>
+    </section>
+
+    <section class="section" aria-labelledby="trio-title">
+      <div class="section-head"><h2 id="trio-title">Trío</h2><p id="trio-sub"></p></div>
+      <div id="trio" class="panel" style="display:grid;gap:18px"></div>
+    </section>
+  </div>
+
+  <section class="section" aria-labelledby="duel-title">
+    <div class="section-head"><h2 id="duel-title">Duelo Ricky – Pablo</h2>
+      <div class="seg" role="group" aria-label="Tramo del duelo" id="tramo-seg"></div>
+    </div>
+    <div id="duel" class="cols-2"></div>
+  </section>
+
+  <section class="section" aria-labelledby="games-title">
+    <div class="section-head"><h2 id="games-title">Por juego</h2>
+      <div class="seg" role="group" aria-label="Tramo del duelo por juego" id="games-seg"></div>
+    </div>
+    <div id="games" class="cards"></div>
+  </section>
+
+  <section class="section" aria-labelledby="records-title">
+    <div class="section-head"><h2 id="records-title">Récords</h2><p>Mejor tiempo sin pistas de cada juego</p></div>
+    <div id="records" class="cards"></div>
+  </section>
+
+  <section class="section" aria-labelledby="evo-title">
+    <div class="section-head"><h2 id="evo-title">Evolución</h2><p>Winrate del duelo por mes</p></div>
+    <div id="evo" class="panel chart" style="display:grid;gap:12px"></div>
+  </section>
+
+  <footer id="footer"></footer>
+</div>
+
+<script type="application/json" id="dash-data">{"generatedAt":"2026-09-26T19:50:50.807Z","lastSyncAt":"2026-09-26T13:22:06.133Z","firstLinkedinApiDate":"2026-09-14","games":{"queens":{"typeId":3},"zip":{"typeId":6},"mini-sudoku":{"typeId":7},"patches":{"typeId":8}},"today":{"date":"2026-09-26","provisional":true,"completeGames":4,"scoredGames":4,"points":{"ricky":2,"pablo":2,"ros":1},"leaders":["ricky","pablo"],"sweep":null,"games":[{"game":"queens","puzzle":879,"players":{"ricky":{"status":"played","t":31},"pablo":{"status":"played","t":64},"ros":{"status":"played","t":114,"hints":true}},"complete":true,"winners":["ricky"],"margin":33,"byHints":false,"rickyPending":false,"final":false},{"game":"zip","puzzle":558,"players":{"ricky":{"status":"played","t":10},"pablo":{"status":"played","t":9},"ros":{"status":"played","t":9}},"complete":true,"winners":["pablo","ros"],"margin":0,"byHints":false,"rickyPending":false,"final":false},{"game":"mini-sudoku","puzzle":411,"players":{"ricky":{"status":"played","t":55},"pablo":{"status":"played","t":75,"hints":true},"ros":{"status":"played","t":91,"hints":true}},"complete":true,"winners":["ricky"],"margin":null,"byHints":true,"rickyPending":false,"final":false},{"game":"patches","puzzle":193,"players":{"ricky":{"status":"played","t":28},"pablo":{"status":"played","t":8},"ros":{"status":"played","t":17}},"complete":true,"winners":["pablo"],"margin":9,"byHints":false,"rickyPending":false,"final":false}]},"yesterday":{"date":"2026-09-25","provisional":true,"completeGames":4,"scoredGames":4,"points":{"ricky":1,"pablo":3,"ros":0},"leaders":["pablo"],"sweep":null,"games":[{"game":"queens","puzzle":878,"players":{"ricky":{"status":"played","t":78},"pablo":{"status":"played","t":24},"ros":{"status":"played","t":30}},"complete":true,"winners":["pablo"],"margin":6,"byHints":false,"rickyPending":false,"final":false},{"game":"zip","puzzle":557,"players":{"ricky":{"status":"played","t":37},"pablo":{"status":"played","t":9},"ros":{"status":"played","t":20,"hints":true}},"complete":true,"winners":["pablo"],"margin":28,"byHints":false,"rickyPending":false,"final":false},{"game":"mini-sudoku","puzzle":410,"players":{"ricky":{"status":"played","t":40},"pablo":{"status":"played","t":61},"ros":{"status":"played","t":93}},"complete":true,"winners":["ricky"],"margin":21,"byHints":false,"rickyPending":false,"final":false},{"game":"patches","puzzle":192,"players":{"ricky":{"status":"played","t":14},"pablo":{"status":"played","t":12},"ros":{"status":"played","t":14}},"complete":true,"winners":["pablo"],"margin":2,"byHints":false,"rickyPending":false,"final":false}]},"last7":[{"date":"2026-09-20","trio":{"valid":true,"points":{"ricky":2,"pablo":1,"ros":1},"leaders":["ricky"]},"duel":{"valid":true,"points":{"ricky":2,"pablo":2},"leaders":["ricky","pablo"]}},{"date":"2026-09-21","trio":{"valid":true,"points":{"ricky":2,"pablo":2,"ros":2},"leaders":["ricky","pablo","ros"]},"duel":{"valid":true,"points":{"ricky":3,"pablo":3},"leaders":["ricky","pablo"]}},{"date":"2026-09-22","trio":{"valid":true,"points":{"ricky":3,"pablo":1,"ros":2},"leaders":["ricky"]},"duel":{"valid":true,"points":{"ricky":3,"pablo":1},"leaders":["ricky"]}},{"date":"2026-09-23","trio":{"valid":true,"points":{"ricky":3,"pablo":1,"ros":2},"leaders":["ricky"]},"duel":{"valid":true,"points":{"ricky":4,"pablo":1},"leaders":["ricky"]}},{"date":"2026-09-24","trio":{"valid":true,"points":{"ricky":2,"pablo":2,"ros":0},"leaders":["ricky","pablo"]},"duel":{"valid":true,"points":{"ricky":2,"pablo":2},"leaders":["ricky","pablo"]}},{"date":"2026-09-25","trio":{"valid":true,"points":{"ricky":1,"pablo":3,"ros":0},"leaders":["pablo"]},"duel":{"valid":true,"points":{"ricky":1,"pablo":3},"leaders":["pablo"]}},{"date":"2026-09-26","trio":{"valid":true,"points":{"ricky":2,"pablo":2,"ros":1},"leaders":["ricky","pablo"]},"duel":{"valid":true,"points":{"ricky":2,"pablo":2},"leaders":["ricky","pablo"]}}],"streaks":{"trio":{"current":{"shared":true,"leaders":["ricky","pablo"],"lastDate":"2026-09-26","length":0},"best":{"ricky":{"length":3,"from":"2026-09-18","to":"2026-09-20"},"pablo":{"length":1,"from":"2026-09-25","to":"2026-09-25"},"ros":{"length":2,"from":"2026-09-14","to":"2026-09-15"}}},"duel":{"current":{"shared":true,"leaders":["ricky","pablo"],"lastDate":"2026-09-26","length":0},"best":{"ricky":{"length":4,"from":"2026-07-12","to":"2026-07-15"},"pablo":{"length":5,"from":"2026-03-31","to":"2026-04-05"}}}},"trio":{"validDays":13,"firstDay":"2026-09-14","lastDay":"2026-09-26","games":52,"points":{"ricky":22,"pablo":18,"ros":22},"outright":{"ricky":18,"pablo":11,"ros":15},"tiedGames":8,"decidedByHints":5,"dayWins":{"ricky":5,"pablo":1,"ros":3},"sharedDays":4,"sharedDaysBy":{"ricky":3,"pablo":4,"ros":2},"sweeps":{"ricky":0,"pablo":0,"ros":1},"perfectDays":{"ricky":0,"pablo":0,"ros":2},"winrate":{"ricky":0.3782,"pablo":0.2724,"ros":0.3494},"scorelines":[{"key":"4-1-0","days":1,"leaders":{"ros":1}},{"key":"4-0-0","days":1,"leaders":{"ros":1}},{"key":"3-2-1","days":2,"leaders":{"ricky":2}},{"key":"3-1-1","days":1,"leaders":{"ricky":1}},{"key":"3-1-0","days":1,"leaders":{"pablo":1}},{"key":"2-2-2","days":1,"leaders":{"empate":1}},{"key":"2-2-1","days":2,"leaders":{"empate":2}},{"key":"2-2-0","days":1,"leaders":{"empate":1}},{"key":"2-1-1","days":3,"leaders":{"ros":1,"ricky":2}}],"byGame":{"queens":{"points":{"ricky":8,"pablo":2,"ros":3},"ties":0,"medians":{"ricky":12,"pablo":24,"ros":13}},"zip":{"points":{"ricky":4,"pablo":7,"ros":7},"ties":4,"medians":{"ricky":11,"pablo":9,"ros":9}},"mini-sudoku":{"points":{"ricky":8,"pablo":0,"ros":5},"ties":0,"medians":{"ricky":53,"pablo":62,"ros":63}},"patches":{"points":{"ricky":2,"pablo":9,"ros":7},"ties":4,"medians":{"ricky":20,"pablo":10,"ros":11}}},"h2h":[{"a":"ricky","b":"pablo","games":52,"aWins":25,"bWins":23,"ties":4},{"a":"ricky","b":"ros","games":52,"aWins":20,"bWins":28,"ties":4},{"a":"pablo","b":"ros","games":52,"aWins":19,"bWins":26,"ties":7}]},"duel":{"defaultTramo":"t2","tramos":[{"id":"t1","label":"T1","from":"2026-03-20","to":"2026-06-12","ongoing":false,"validDays":77,"firstDay":"2026-03-20","lastDay":"2026-06-12","games":308,"points":{"ricky":142,"pablo":178},"outright":{"ricky":130,"pablo":166},"tiedGames":12,"decidedByHints":21,"dayWins":{"ricky":20,"pablo":31},"sharedDays":26,"sharedDaysBy":{"ricky":26,"pablo":26},"sweeps":{"ricky":0,"pablo":6},"perfectDays":{"ricky":1,"pablo":8},"winrate":{"ricky":0.4416,"pablo":0.5584},"scorelines":[{"key":"4-0","days":6,"leaders":{"pablo":6}},{"key":"4-1","days":3,"leaders":{"pablo":2,"ricky":1}},{"key":"3-2","days":9,"leaders":{"ricky":5,"pablo":4}},{"key":"3-1","days":33,"leaders":{"pablo":19,"ricky":14}},{"key":"2-2","days":26,"leaders":{"empate":26}}],"byGame":{"queens":{"points":{"ricky":25,"pablo":52},"ties":0,"medians":{"ricky":42,"pablo":35}},"zip":{"points":{"ricky":31,"pablo":52},"ties":6,"medians":{"ricky":17,"pablo":12}},"mini-sudoku":{"points":{"ricky":57,"pablo":22},"ties":2,"medians":{"ricky":61,"pablo":74}},"patches":{"points":{"ricky":29,"pablo":52},"ties":4,"medians":{"ricky":22,"pablo":19}}},"h2h":[{"a":"ricky","b":"pablo","games":308,"aWins":130,"bWins":166,"ties":12}]},{"id":"t2","label":"T2","from":"2026-06-13","to":"2026-09-26","ongoing":true,"validDays":105,"firstDay":"2026-06-13","lastDay":"2026-09-26","games":420,"points":{"ricky":225,"pablo":220},"outright":{"ricky":200,"pablo":195},"tiedGames":25,"decidedByHints":71,"dayWins":{"ricky":39,"pablo":38},"sharedDays":28,"sharedDaysBy":{"ricky":28,"pablo":28},"sweeps":{"ricky":6,"pablo":4},"perfectDays":{"ricky":9,"pablo":7},"winrate":{"ricky":0.506,"pablo":0.494},"scorelines":[{"key":"4-0","days":10,"leaders":{"ricky":6,"pablo":4}},{"key":"4-1","days":5,"leaders":{"pablo":2,"ricky":3}},{"key":"3-2","days":16,"leaders":{"pablo":7,"ricky":9}},{"key":"3-1","days":45,"leaders":{"ricky":21,"pablo":24}},{"key":"2-2","days":27,"leaders":{"empate":27}},{"key":"4-2","days":1,"leaders":{"pablo":1}},{"key":"3-3","days":1,"leaders":{"empate":1}}],"byGame":{"queens":{"points":{"ricky":55,"pablo":53},"ties":3,"medians":{"ricky":35,"pablo":31}},"zip":{"points":{"ricky":48,"pablo":71},"ties":14,"medians":{"ricky":13,"pablo":11}},"mini-sudoku":{"points":{"ricky":79,"pablo":29},"ties":3,"medians":{"ricky":55,"pablo":65}},"patches":{"points":{"ricky":43,"pablo":67},"ties":5,"medians":{"ricky":20,"pablo":16}}},"h2h":[{"a":"ricky","b":"pablo","games":420,"aWins":200,"bWins":195,"ties":25}]},{"id":"hist","label":"Histórico","from":"2026-03-20","to":"2026-09-26","ongoing":true,"validDays":182,"firstDay":"2026-03-20","lastDay":"2026-09-26","games":728,"points":{"ricky":367,"pablo":398},"outright":{"ricky":330,"pablo":361},"tiedGames":37,"decidedByHints":92,"dayWins":{"ricky":59,"pablo":69},"sharedDays":54,"sharedDaysBy":{"ricky":54,"pablo":54},"sweeps":{"ricky":6,"pablo":10},"perfectDays":{"ricky":10,"pablo":15},"winrate":{"ricky":0.4787,"pablo":0.5213},"scorelines":[{"key":"4-0","days":16,"leaders":{"pablo":10,"ricky":6}},{"key":"4-1","days":8,"leaders":{"pablo":4,"ricky":4}},{"key":"3-2","days":25,"leaders":{"ricky":14,"pablo":11}},{"key":"3-1","days":78,"leaders":{"pablo":43,"ricky":35}},{"key":"2-2","days":53,"leaders":{"empate":53}},{"key":"4-2","days":1,"leaders":{"pablo":1}},{"key":"3-3","days":1,"leaders":{"empate":1}}],"byGame":{"queens":{"points":{"ricky":80,"pablo":105},"ties":3,"medians":{"ricky":40,"pablo":33}},"zip":{"points":{"ricky":79,"pablo":123},"ties":20,"medians":{"ricky":13,"pablo":11}},"mini-sudoku":{"points":{"ricky":136,"pablo":51},"ties":5,"medians":{"ricky":57,"pablo":66.5}},"patches":{"points":{"ricky":72,"pablo":119},"ties":9,"medians":{"ricky":20,"pablo":16}}},"h2h":[{"a":"ricky","b":"pablo","games":728,"aWins":330,"bWins":361,"ties":37}]}]},"records":{"byGame":{"queens":{"overall":[{"player":"ricky","t":4,"date":"2026-08-31"}],"personal":{"ricky":{"best":{"t":4,"date":"2026-08-31"},"median":50,"count":418},"pablo":{"best":{"t":5,"date":"2026-05-04"},"median":43,"count":409},"ros":{"best":{"t":5,"date":"2026-09-14"},"median":13,"count":13}}},"zip":{"overall":[{"player":"ricky","t":3,"date":"2026-07-29"}],"personal":{"ricky":{"best":{"t":3,"date":"2026-07-29"},"median":14,"count":420},"pablo":{"best":{"t":4,"date":"2025-08-25"},"median":12,"count":414},"ros":{"best":{"t":4,"date":"2026-09-21"},"median":9,"count":13}}},"mini-sudoku":{"overall":[{"player":"ricky","t":30,"date":"2026-09-08"}],"personal":{"ricky":{"best":{"t":30,"date":"2026-09-08"},"median":63,"count":298},"pablo":{"best":{"t":31,"date":"2026-07-27"},"median":72.5,"count":238},"ros":{"best":{"t":34,"date":"2026-09-15"},"median":63,"count":13}}},"patches":{"overall":[{"player":"pablo","t":3,"date":"2026-08-31"}],"personal":{"ricky":{"best":{"t":4,"date":"2026-07-06"},"median":20,"count":191},"pablo":{"best":{"t":3,"date":"2026-08-31"},"median":16,"count":190},"ros":{"best":{"t":5,"date":"2026-09-14"},"median":11,"count":13}}}},"daysWithData":{"ricky":421,"pablo":417,"ros":13}},"recentMedians":{"from":"2026-08-28","byGame":{"queens":{"ricky":{"median":30.5,"count":30},"pablo":{"median":38,"count":30},"ros":{"median":13,"count":13}},"zip":{"ricky":{"median":13,"count":30},"pablo":{"median":10.5,"count":30},"ros":{"median":9,"count":13}},"mini-sudoku":{"ricky":{"median":53,"count":30},"pablo":{"median":63.5,"count":30},"ros":{"median":63,"count":13}},"patches":{"ricky":{"median":20,"count":30},"pablo":{"median":12.5,"count":30},"ros":{"median":11,"count":13}}}},"duelByGame":{"defaultTramo":"hist","tramos":[{"id":"t1","label":"T1","byGame":{"queens":{"days":301,"firstDay":"2025-07-31","lastDay":"2026-06-12","points":{"ricky":104,"pablo":198},"outright":{"ricky":103,"pablo":197},"ties":1,"decidedByHints":14,"medians":{"ricky":{"median":59.5,"count":312},"pablo":{"median":45.5,"count":304},"ros":{"median":null,"count":0}}},"zip":{"days":306,"firstDay":"2025-07-31","lastDay":"2026-06-12","points":{"ricky":137,"pablo":189},"outright":{"ricky":117,"pablo":169},"ties":20,"decidedByHints":6,"medians":{"ricky":{"median":14,"count":314},"pablo":{"median":13,"count":308},"ros":{"median":null,"count":0}}},"mini-sudoku":{"days":131,"firstDay":"2025-12-03","lastDay":"2026-06-12","points":{"ricky":105,"pablo":28},"outright":{"ricky":103,"pablo":26},"ties":2,"decidedByHints":1,"medians":{"ricky":{"median":69,"count":192},"pablo":{"median":87,"count":132},"ros":{"median":null,"count":0}}},"patches":{"days":84,"firstDay":"2026-03-20","lastDay":"2026-06-12","points":{"ricky":33,"pablo":55},"outright":{"ricky":29,"pablo":51},"ties":4,"decidedByHints":7,"medians":{"ricky":{"median":23,"count":85},"pablo":{"median":19,"count":84},"ros":{"median":null,"count":0}}}}},{"id":"t2","label":"T2","byGame":{"queens":{"days":105,"firstDay":"2026-06-13","lastDay":"2026-09-26","points":{"ricky":55,"pablo":53},"outright":{"ricky":52,"pablo":50},"ties":3,"decidedByHints":21,"medians":{"ricky":{"median":34,"count":106},"pablo":{"median":31,"count":105},"ros":{"median":13,"count":13}}},"zip":{"days":106,"firstDay":"2026-06-13","lastDay":"2026-09-26","points":{"ricky":48,"pablo":72},"outright":{"ricky":34,"pablo":58},"ties":14,"decidedByHints":8,"medians":{"ricky":{"median":13,"count":106},"pablo":{"median":10.5,"count":106},"ros":{"median":9,"count":13}}},"mini-sudoku":{"days":106,"firstDay":"2026-06-13","lastDay":"2026-09-26","points":{"ricky":80,"pablo":29},"outright":{"ricky":77,"pablo":26},"ties":3,"decidedByHints":29,"medians":{"ricky":{"median":54,"count":106},"pablo":{"median":64,"count":106},"ros":{"median":63,"count":13}}},"patches":{"days":106,"firstDay":"2026-06-13","lastDay":"2026-09-26","points":{"ricky":43,"pablo":68},"outright":{"ricky":38,"pablo":63},"ties":5,"decidedByHints":13,"medians":{"ricky":{"median":19,"count":106},"pablo":{"median":15.5,"count":106},"ros":{"median":11,"count":13}}}}},{"id":"ros","label":"Con Ros","byGame":{"queens":{"days":13,"firstDay":"2026-09-14","lastDay":"2026-09-26","points":{"ricky":11,"pablo":2},"outright":{"ricky":11,"pablo":2},"ties":0,"decidedByHints":3,"medians":{"ricky":{"median":12,"count":13},"pablo":{"median":24,"count":13},"ros":{"median":13,"count":13}}},"zip":{"days":13,"firstDay":"2026-09-14","lastDay":"2026-09-26","points":{"ricky":4,"pablo":11},"outright":{"ricky":2,"pablo":9},"ties":2,"decidedByHints":2,"medians":{"ricky":{"median":11,"count":13},"pablo":{"median":9,"count":13},"ros":{"median":9,"count":13}}},"mini-sudoku":{"days":13,"firstDay":"2026-09-14","lastDay":"2026-09-26","points":{"ricky":11,"pablo":3},"outright":{"ricky":10,"pablo":2},"ties":1,"decidedByHints":3,"medians":{"ricky":{"median":53,"count":13},"pablo":{"median":62,"count":13},"ros":{"median":63,"count":13}}},"patches":{"days":13,"firstDay":"2026-09-14","lastDay":"2026-09-26","points":{"ricky":3,"pablo":11},"outright":{"ricky":2,"pablo":10},"ties":1,"decidedByHints":0,"medians":{"ricky":{"median":20,"count":13},"pablo":{"median":10,"count":13},"ros":{"median":11,"count":13}}}}},{"id":"hist","label":"Histórico","byGame":{"queens":{"days":406,"firstDay":"2025-07-31","lastDay":"2026-09-26","points":{"ricky":159,"pablo":251},"outright":{"ricky":155,"pablo":247},"ties":4,"decidedByHints":35,"medians":{"ricky":{"median":50,"count":418},"pablo":{"median":43,"count":409},"ros":{"median":13,"count":13}}},"zip":{"days":412,"firstDay":"2025-07-31","lastDay":"2026-09-26","points":{"ricky":185,"pablo":261},"outright":{"ricky":151,"pablo":227},"ties":34,"decidedByHints":14,"medians":{"ricky":{"median":14,"count":420},"pablo":{"median":12,"count":414},"ros":{"median":9,"count":13}}},"mini-sudoku":{"days":237,"firstDay":"2025-12-03","lastDay":"2026-09-26","points":{"ricky":185,"pablo":57},"outright":{"ricky":180,"pablo":52},"ties":5,"decidedByHints":30,"medians":{"ricky":{"median":63,"count":298},"pablo":{"median":72.5,"count":238},"ros":{"median":63,"count":13}}},"patches":{"days":190,"firstDay":"2026-03-20","lastDay":"2026-09-26","points":{"ricky":76,"pablo":123},"outright":{"ricky":67,"pablo":114},"ties":9,"decidedByHints":20,"medians":{"ricky":{"median":20,"count":191},"pablo":{"median":16,"count":190},"ros":{"median":11,"count":13}}}}}]},"monthly":[{"month":"2026-03","partial":false,"duel":{"validDays":7,"winrate":{"ricky":0.375,"pablo":0.625},"dayWins":{"ricky":2,"pablo":5},"sharedDays":0},"trio":{"validDays":0,"winrate":{"ricky":null,"pablo":null,"ros":null},"dayWins":{"ricky":0,"pablo":0,"ros":0},"sharedDays":0}},{"month":"2026-04","partial":false,"duel":{"validDays":28,"winrate":{"ricky":0.4241,"pablo":0.5759},"dayWins":{"ricky":7,"pablo":12},"sharedDays":9},"trio":{"validDays":0,"winrate":{"ricky":null,"pablo":null,"ros":null},"dayWins":{"ricky":0,"pablo":0,"ros":0},"sharedDays":0}},{"month":"2026-05","partial":false,"duel":{"validDays":30,"winrate":{"ricky":0.4708,"pablo":0.5292},"dayWins":{"ricky":8,"pablo":9},"sharedDays":13},"trio":{"validDays":0,"winrate":{"ricky":null,"pablo":null,"ros":null},"dayWins":{"ricky":0,"pablo":0,"ros":0},"sharedDays":0}},{"month":"2026-06","partial":false,"duel":{"validDays":30,"winrate":{"ricky":0.4917,"pablo":0.5083},"dayWins":{"ricky":11,"pablo":12},"sharedDays":7},"trio":{"validDays":0,"winrate":{"ricky":null,"pablo":null,"ros":null},"dayWins":{"ricky":0,"pablo":0,"ros":0},"sharedDays":0}},{"month":"2026-07","partial":false,"duel":{"validDays":31,"winrate":{"ricky":0.4839,"pablo":0.5161},"dayWins":{"ricky":12,"pablo":15},"sharedDays":4},"trio":{"validDays":0,"winrate":{"ricky":null,"pablo":null,"ros":null},"dayWins":{"ricky":0,"pablo":0,"ros":0},"sharedDays":0}},{"month":"2026-08","partial":false,"duel":{"validDays":30,"winrate":{"ricky":0.4875,"pablo":0.5125},"dayWins":{"ricky":10,"pablo":10},"sharedDays":10},"trio":{"validDays":0,"winrate":{"ricky":null,"pablo":null,"ros":null},"dayWins":{"ricky":0,"pablo":0,"ros":0},"sharedDays":0}},{"month":"2026-09","partial":true,"duel":{"validDays":26,"winrate":{"ricky":0.5433,"pablo":0.4567},"dayWins":{"ricky":9,"pablo":6},"sharedDays":11},"trio":{"validDays":13,"winrate":{"ricky":0.3782,"pablo":0.2724,"ros":0.3494},"dayWins":{"ricky":5,"pablo":1,"ros":3},"sharedDays":4}}]}</script>
+<script>
+(() => {
+  const D = JSON.parse(document.getElementById('dash-data').textContent);
+  const $ = (id) => document.getElementById(id);
+  const PL = { ricky: 'Ricky', pablo: 'Pablo', ros: 'Ros' };
+  const GL = { queens: 'Queens', zip: 'Zip', 'mini-sudoku': 'Mini Sudoku', patches: 'Patches' };
+  const TRIO = ['ricky', 'pablo', 'ros'];
+  const DUEL = ['ricky', 'pablo'];
+  const GAMES = ['queens', 'zip', 'mini-sudoku', 'patches'];
+
+  const time = (s) => {
+    if (s === null || s === undefined) return '—';
+    const whole = Math.floor(s);
+    return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}${s - whole ? ',5' : ''}`;
+  };
+  const pct = (x) => (x === null || x === undefined ? '—' : `${Math.round(x * 100)} %`);
+  // Winrates de un mismo grupo: redondeo que reparte los restos para que lo mostrado sume exactamente 100 %.
+  const pcts = (m) => {
+    const keys = Object.keys(m).filter((k) => m[k] !== null && m[k] !== undefined);
+    if (!keys.length) return Object.fromEntries(Object.keys(m).map((k) => [k, '—']));
+    const raw = keys.map((k) => ({ k, v: m[k] * 100 }));
+    const out = Object.fromEntries(raw.map(({ k, v }) => [k, Math.floor(v)]));
+    let left = 100 - Object.values(out).reduce((a, b) => a + b, 0);
+    for (const { k } of [...raw].sort((a, b) => (b.v % 1) - (a.v % 1))) if (left-- > 0) out[k]++;
+    return Object.fromEntries(Object.keys(m).map((k) => [k, k in out ? `${out[k]} %` : '—']));
+  };
+  const at = (iso) => new Date(`${iso}T12:00:00Z`);
+  const dLong = (iso) => at(iso).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+  const dShort = (iso) => at(iso).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', timeZone: 'UTC' }).replace('.', '');
+  // Con año si no es del año en curso (p. ej. un récord de 2025).
+  const dShortY = (iso) => (iso.slice(0, 4) === String(new Date().getFullYear()) ? dShort(iso) : `${dShort(iso)} ${iso.slice(0, 4)}`);
+  const dWeek = (iso) => at(iso).toLocaleDateString('es-ES', { weekday: 'short', timeZone: 'UTC' }).replace('.', '').slice(0, 2);
+  const mShort = (ym) => new Date(`${ym}-15T12:00:00Z`).toLocaleDateString('es-ES', { month: 'short', timeZone: 'UTC' }).replace('.', '');
+  const names = (arr) => arr.map((p) => PL[p]).join(arr.length === 2 ? ' y ' : ', ');
+  const days = (n) => `${n} ${n === 1 ? 'día' : 'días'}`;
+  // Cuadrado dividido en diagonal: repartir la diagonal a partes iguales NO da áreas iguales (la banda central
+  // sale más ancha). El área acumulada hasta t vale 2t² hasta la mitad y 1-2(1-t)² después, así que se invierte.
+  const areaStop = (a) => (a <= 0.5 ? Math.sqrt(a / 2) : 1 - Math.sqrt((1 - a) / 2));
+  const fill = (leaders) => {
+    if (leaders.length === 1) return `background: var(--${leaders[0]})`;
+    const n = leaders.length;
+    const cuts = [0, ...Array.from({ length: n - 1 }, (_, k) => areaStop((k + 1) / n)), 1];
+    return `background: linear-gradient(135deg, ${leaders.map((p, i) => `var(--${p}) ${cuts[i] * 100}% ${cuts[i + 1] * 100}%`).join(', ')})`;
+  };
+
+  // ---- cabecera
+  const updated = D.lastSyncAt ?? D.generatedAt;
+  $('updated').textContent = `Actualizado ${new Date(updated).toLocaleString('es-ES', { timeZone: 'Europe/Madrid', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}`;
+
+  // ---- hoy
+  // El día de LinkedIn cambia a medianoche de California (09:00 en Madrid). Si los datos son de un día anterior,
+  // se muestra ya el día nuevo en blanco; se irá completando con los siguientes syncs.
+  const puzzleDayNow = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
+  const dayDiff = (a, b) => Math.round((Date.parse(a) - Date.parse(b)) / 86400000);
+  const currentToday = () => {
+    const T = D.today;
+    const now = puzzleDayNow();
+    if (!T || now <= T.date) return T;
+    const blank = { status: 'pending' };
+    return {
+      date: now, stale: true, provisional: true, completeGames: 0, leaders: [], sweep: null,
+      points: { ricky: 0, pablo: 0, ros: 0 },
+      games: T.games.map((g) => ({ game: g.game, puzzle: g.puzzle ? g.puzzle + dayDiff(now, T.date) : null, players: { ricky: blank, pablo: blank, ros: blank }, complete: false, winners: [], margin: null, rickyPending: false, final: false })),
+    };
+  };
+  // Pestañas Hoy / Ayer. Si el navegador ya pasó al día nuevo, «Ayer» es lo último descargado.
+  const yesterdayBlock = () => (currentToday()?.stale ? D.today : D.yesterday);
+  let view = 'hoy';
+  let shownDay = null;
+  const renderToday = () => {
+    const isAyer = view === 'ayer' && !!yesterdayBlock();
+    const T = isAyer ? yesterdayBlock() : currentToday();
+    shownDay = currentToday()?.date ?? null;
+    if (!T) { $('today').innerHTML = '<p class="muted">Todavía no hay datos de LinkedIn.</p>'; return; }
+    const clock = '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5V8l2.4 1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+    const chip = isAyer
+      ? `<span class="chip final">Día cerrado${T.completeGames < 4 ? ' · faltó alguien' : ''}</span>`
+      : T.stale
+      ? `<span class="chip provisional" title="Todavía no se ha consultado LinkedIn hoy.">${clock}Sin datos de hoy todavía</span>`
+      : T.completeGames === 4
+      ? '' // los tres ya han jugado los 4: el resultado no va a cambiar
+      : T.provisional
+      ? `<span class="chip provisional" title="Datos de hoy descargados antes del cierre del día. Se confirman con el sync de mañana.">${clock}Provisional · se confirma mañana</span>`
+      : '<span class="chip final">Confirmado</span>';
+    const complete = T.completeGames === 4;
+    const decided = isAyer || T.completeGames === 4 || (!T.provisional && T.scoredGames === 4); // resultado que ya no cambia
+    const slot = (p) => {
+      const lead = T.leaders.includes(p);
+      let tag = '';
+      if (T.sweep === p) tag = '<span class="pill">Pipeadita</span>';
+      else if (lead && T.leaders.length === 1) tag = decided ? 'Gana el día' : 'Va ganando';
+      else if (lead) tag = decided ? 'Día compartido' : 'Empatados en cabeza';
+      return `<div class="slot c-${p}${lead ? ' lead' : ''}"><span class="who"><span class="dot"></span>${PL[p]}</span><span class="num">${T.points[p]}</span><span class="tag">${tag}</span></div>`;
+    };
+    const cell = (g, p) => {
+      const s = g.players[p];
+      if (s.status === 'pending') return `<div class="tcell pending c-${p}">${isAyer ? 'no jugó' : 'por jugar'}</div>`;
+      if (s.status === 'hidden') return `<div class="tcell hidden c-${p}">oculto</div>`;
+      const isWin = g.winners.includes(p);
+      const cls = isWin ? ' win' : '';
+      return `<div class="tcell c-${p}${cls}" aria-label="${PL[p]} ${time(s.t)}${s.hints ? ' con pistas' : ''}${isWin ? ', gana' : ''}">${time(s.t)}${s.hints ? '<span class="hint">con pistas</span>' : ''}</div>`;
+    };
+    const rows = T.games.map((g) => {
+      let sub = g.puzzle ? `#${g.puzzle}` : '';
+      if (g.complete && g.winners.length > 1) sub += ' · empate';
+      else if (g.complete && g.byHints) sub += ' · sin pistas gana';
+      else if (g.complete && g.margin !== null) sub += ` · por ${g.margin} s`;
+      const missing = names(TRIO.filter((p) => g.players[p].status !== 'played'));
+      const note = g.rickyPending
+        ? `<div class="note">${isAyer ? 'Ricky no lo jugó: LinkedIn no enseñó los tiempos del resto' : 'Ricky aún no lo ha jugado: hasta entonces LinkedIn no enseña los tiempos del resto'}</div>`
+        : !g.complete ? `<div class="note">${isAyer ? 'No lo jugó' : 'Falta'} ${missing}</div>` : '';
+      return `<div class="grow"><div class="gname"><b>${GL[g.game]}</b><small>${sub}</small></div>${TRIO.map((p) => cell(g, p)).join('')}${note}</div>`;
+    }).join('');
+    const pendingCount = 4 - T.completeGames;
+    $('today').innerHTML = `
+      <div class="today-head"><div>${yesterdayBlock() ? `<div class="seg day-seg" role="group" aria-label="Día"><button type="button" data-view="hoy" aria-pressed="${!isAyer}">Hoy</button><button type="button" data-view="ayer" aria-pressed="${isAyer}">Ayer</button></div>` : '<p class="eyebrow">Hoy</p>'}<h1 class="today-date" id="today-title">${dLong(T.date)}</h1></div>${chip}</div>
+      <div class="board" role="group" aria-label="Marcador del trío ${isAyer ? 'de ayer' : 'de hoy'}">${TRIO.map(slot).join('')}</div>
+      <div class="grid-games"><div class="grow head"><span>Juego</span>${TRIO.map((p) => `<span>${PL[p]}</span>`).join('')}</div>${rows}</div>
+      <p class="today-foot">${isAyer ? 'Resultados finales del día anterior: sin pistas gana a con pistas y, a igualdad, el mejor tiempo; un empate da punto a cada empatado.' : T.stale ? 'Día nuevo: los tiempos aparecerán a medida que se consulte LinkedIn a lo largo del día.' : `1 punto por juego entre quienes ya han jugado: sin pistas gana a con pistas y, a igualdad, el mejor tiempo; un empate da punto a cada empatado.${pendingCount ? ` Aún falta alguien en ${pendingCount} ${pendingCount === 1 ? 'juego' : 'juegos'}.` : ''}`}</p>`;
+  };
+  $('today').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-view]');
+    if (!b || b.dataset.view === view) return;
+    view = b.dataset.view;
+    renderToday();
+    $('today').querySelector(`[data-view="${view}"]`)?.focus();
+  });
+  renderToday();
+  setInterval(() => { if (puzzleDayNow() !== shownDay) renderToday(); }, 60_000);
+
+  // ---- racha y semana
+  (() => {
+    const tile = (label, s, players) => {
+      const cur = s.current;
+      let big = '—', sub = 'Sin días válidos todavía', cls = '';
+      if (cur && cur.shared) { big = 'Compartido'; sub = `Último día (${dShort(cur.lastDate)}) compartido entre ${names(cur.leaders)}`; }
+      else if (cur) { cls = `c-${cur.player}`; big = `${PL[cur.player]} · ${cur.length}`; sub = `${cur.length === 1 ? 'día' : 'días seguidos'} desde el ${dShort(cur.since)}`; }
+      const best = players.filter((p) => s.best[p].length).map((p) => `${PL[p]} ${s.best[p].length}`).join(' · ') || '—';
+      return `<div class="panel streak ${cls}"><p class="lbl">Racha ${label}</p><p class="big">${big}</p><p class="sub">${sub}</p><p class="best">Mejor racha: ${best}</p></div>`;
+    };
+    $('streaks').innerHTML = tile('trío', D.streaks.trio, TRIO) + tile('duelo', D.streaks.duel, DUEL);
+    const row = (key, label) => `<div><p class="row-lbl">${label}</p><div class="days">${D.last7.map((d) => {
+      const r = d[key];
+      const desc = r.valid ? `${dLong(d.date)}: ${r.leaders.length === 1 ? `gana ${PL[r.leaders[0]]}` : `compartido ${names(r.leaders)}`} (${(key === 'trio' ? TRIO : DUEL).map((p) => r.points[p]).join('-')})` : `${dLong(d.date)}: ${r.reason === 'sin datos' ? 'sin datos' : 'no válido'}`;
+      const sq = r.valid ? `<span class="sq" style="${fill(r.leaders)}">${Math.max(...Object.values(r.points))}</span>` : '<span class="sq none">·</span>';
+      return `<div class="day" title="${desc}" aria-label="${desc}"><span class="d">${dWeek(d.date)}<b>${at(d.date).getUTCDate()}</b></span>${sq}</div>`;
+    }).join('')}</div></div>`;
+    $('week').innerHTML = row('trio', 'Trío') + row('duel', 'Duelo') +
+      `<div class="legend">${TRIO.map((p) => `<span><i class="sw" style="background:var(--${p})"></i>${PL[p]}</span>`).join('')}<span><i class="sw" style="background:linear-gradient(135deg,var(--ricky) 50%,var(--pablo) 50%)"></i>Compartido</span><span><i class="sw" style="border:1.5px dashed var(--line)"></i>Sin día válido</span></div>
+       <p class="note-sm">El número es la puntuación del ganador del día. El trío solo cuenta días con datos de LinkedIn (desde el ${dShort(D.firstLinkedinApiDate)}).</p>`;
+  })();
+
+  // ---- trío
+  (() => {
+    const T = D.trio;
+    const wr = pcts(T.winrate);
+    $('trio-sub').textContent = `${days(T.validDays)} válidos · desde el ${T.firstDay ? dShort(T.firstDay) : '—'}`;
+    if (!T.validDays) { $('trio').innerHTML = '<p class="muted">Aún no hay días con los 4 juegos de los tres.</p>'; return; }
+    const table = `<div class="scroll"><table>
+      <thead><tr><th>Jugador</th><th>Días ganados</th><th>Compartidos</th><th>Pipeaditas</th><th>Victorias limpias</th><th>Winrate</th></tr></thead>
+      <tbody>${TRIO.map((p) => `<tr class="c-${p}"><td class="player"><span class="dot"></span>${PL[p]}</td><td><strong>${T.dayWins[p]}</strong></td><td>${T.sharedDaysBy[p]}</td><td>${T.sweeps[p]}</td><td>${T.outright[p]}</td><td>${wr[p]}</td></tr>`).join('')}</tbody>
+    </table></div>
+    <p class="note-sm">De los ${days(T.validDays)}, ${T.validDays - T.sharedDays} los ganó alguien en solitario y ${T.sharedDays} ${T.sharedDays === 1 ? 'fue compartido' : 'fueron compartidos'} (empate a puntos en cabeza). Pipeadita: ganar los 4 juegos del día. Victoria limpia: juego con ganador único. Winrate: parte de los ${T.games} juegos que gana cada uno; un empate se reparte entre los empatados, así que suma 100 %. Sin pistas gana a con pistas en cada juego.</p>`;
+    const h2h = T.h2h.map((h) => {
+      const w = (n) => (h.games ? (n / h.games) * 100 : 0);
+      return `<div class="h2h-row"><div class="top"><span class="c-${h.a}" style="color:var(--pc);font-weight:700">${PL[h.a]}</span><span><b>${h.aWins} – ${h.bWins}</b>${h.ties ? ` <span class="muted">(${h.ties} emp.)</span>` : ''}</span><span class="c-${h.b}" style="color:var(--pc);font-weight:700">${PL[h.b]}</span></div>
+        <div class="split" role="img" aria-label="${PL[h.a]} ${h.aWins}, ${PL[h.b]} ${h.bWins}, empates ${h.ties}"><i style="width:${w(h.aWins)}%;background:var(--${h.a})"></i><i style="width:${w(h.ties)}%;background:var(--tie)"></i><i style="width:${w(h.bWins)}%;background:var(--${h.b})"></i></div></div>`;
+    }).join('');
+    $('trio').innerHTML = `${table}<div><p class="eyebrow" style="margin-bottom:10px">Cara a cara</p><div class="h2h">${h2h}</div></div>`;
+  })();
+
+  // ---- duelo
+  (() => {
+    let current = D.duel.defaultTramo;
+    try { current = localStorage.getItem('tramo') || current; } catch (e) {}
+    if (!D.duel.tramos.some((t) => t.id === current)) current = D.duel.defaultTramo;
+    const seg = $('tramo-seg');
+    seg.innerHTML = D.duel.tramos.map((t) => `<button type="button" id="tramo-${t.id}" data-id="${t.id}" aria-pressed="false">${t.label}</button>`).join('');
+    const render = () => {
+      const t = D.duel.tramos.find((x) => x.id === current);
+      seg.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.id === current)));
+      const main = ['4-0', '4-1', '3-2', '3-1'];
+      const maxDays = Math.max(1, ...t.scorelines.flatMap((s) => [s.leaders.ricky ?? 0, s.leaders.pablo ?? 0, s.leaders.empate ?? 0]));
+      const bar = (n, p) => `<span class="bar c-${p}" style="width:${(n / maxDays) * 100}%"></span>`;
+      const rows = main.map((k) => {
+        const s = t.scorelines.find((x) => x.key === k) ?? { leaders: {} };
+        const r = s.leaders.ricky ?? 0, pb = s.leaders.pablo ?? 0;
+        return `<div class="sl" aria-label="${k}: Ricky ${r}, Pablo ${pb}"><div class="side left"><span class="${r ? '' : 'zero'}">${r}</span>${bar(r, 'ricky')}</div><div class="key">${k}</div><div class="side">${bar(pb, 'pablo')}<span class="${pb ? '' : 'zero'}">${pb}</span></div></div>`;
+      }).join('');
+      const tie = t.scorelines.find((x) => x.key === '2-2')?.days ?? 0;
+      const others = t.scorelines.filter((s) => !main.includes(s.key) && s.key !== '2-2');
+      const tieRow = `<div class="sl tie" aria-label="2-2: ${tie} días"><div class="side left"><span class="bar" style="width:${(tie / maxDays) * 50}%"></span></div><div class="key">2-2</div><div class="side"><span class="bar" style="width:${(tie / maxDays) * 50}%"></span><span>${tie}</span></div></div>`;
+      const othersTxt = others.length ? `<p class="note-sm">Otros marcadores: ${others.map((s) => `${s.key} (${Object.entries(s.leaders).map(([w, n]) => `${w === 'empate' ? 'empate' : PL[w]} ${n}`).join(', ')})`).join(' · ')}</p>` : '';
+      const cw = t.winrate;
+      const wr = pcts(cw);
+      $('duel').innerHTML = `
+        <div class="panel" style="display:grid;gap:16px">
+          <p class="note-sm">${dShort(t.from)} → ${dShort(t.to)}${t.ongoing ? ' (en curso)' : ''} · <b>${days(t.validDays)} válidos</b></p>
+          <div class="duel-top">
+            <div class="kpi"><p class="lbl">Días ganados</p><p class="val"><span class="c-ricky">${t.dayWins.ricky}</span><span class="muted" style="font-weight:600">–</span><span class="c-pablo">${t.dayWins.pablo}</span><small>${t.sharedDays} días empatados</small></p></div>
+            <div class="kpi"><p class="lbl">Winrate</p><p class="val"><span class="c-ricky">${wr.ricky}</span><span class="muted" style="font-weight:600">–</span><span class="c-pablo">${wr.pablo}</span></p></div>
+          </div>
+          <div class="split" role="img" aria-label="Winrate Ricky ${wr.ricky}, Pablo ${wr.pablo}"><i style="width:${(cw.ricky ?? 0) * 100}%;background:var(--ricky)"></i><i style="width:${(cw.pablo ?? 0) * 100}%;background:var(--pablo)"></i></div>
+          <div class="scroll"><table>
+            <thead><tr><th></th><th>Juegos ganados</th><th>Victorias limpias</th><th>Pipeaditas</th><th>Winrate</th></tr></thead>
+            <tbody>${DUEL.map((p) => `<tr class="c-${p}"><td class="player"><span class="dot"></span>${PL[p]}</td><td><strong>${t.points[p]}</strong></td><td>${t.outright[p]}</td><td>${t.sweeps[p]}</td><td>${wr[p]}</td></tr>`).join('')}</tbody>
+          </table></div>
+          <p class="note-sm">${t.tiedGames} juegos empatados: cuentan como ganados para los dos, pero en el winrate cada uno se lleva la mitad (Ricky + Pablo = 100 %). Victoria limpia: juego con ganador único. Pipeadita: 4-0.</p>
+        </div>
+        <div class="panel" style="display:grid;gap:10px">
+          <p class="sl-title">Marcadores · días</p>
+          <div class="sl-head"><span class="c-ricky" style="color:var(--pc)">Ricky</span><span></span><span class="c-pablo" style="color:var(--pc)">Pablo</span></div>
+          <div class="scorelines">${rows}${tieRow}</div>
+          ${othersTxt}
+        </div>`;
+    };
+    seg.addEventListener('click', (e) => {
+      const b = e.target.closest('button[data-id]');
+      if (!b) return;
+      current = b.dataset.id;
+      try { localStorage.setItem('tramo', current); } catch (err) {}
+      render();
+    });
+    render();
+  })();
+
+  // ---- por juego
+  (() => {
+    const T = D.duelByGame.tramos ?? [{ id: 'hist', label: 'Histórico', byGame: D.duelByGame }];
+    // Siempre arranca en Histórico: la comparación natural de cada juego es desde el primer día que se jugó.
+    let current = D.duelByGame.defaultTramo ?? 'hist';
+    if (!T.some((t) => t.id === current)) current = T.at(-1).id;
+    const seg = $('games-seg');
+    seg.innerHTML = T.map((t) => `<button type="button" data-id="${t.id}" aria-pressed="false">${t.label}</button>`).join('');
+    const render = () => {
+    const byGame = T.find((t) => t.id === current).byGame;
+    seg.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.id === current)));
+    $('games').innerHTML = GAMES.map((g) => {
+      const tg = D.trio.byGame[g];
+      const dg = byGame[g];
+      const trioMax = Math.max(...TRIO.map((p) => tg.points[p]));
+      const trio = D.trio.validDays ? `<div class="blk"><p class="blk-lbl">Trío · ${days(D.trio.validDays)}</p><div class="trip">${TRIO.map((p) => `<div class="c-${p}${tg.points[p] === trioMax && trioMax > 0 ? ' top' : ''}"><span class="n">${tg.points[p]}</span><span class="w">${PL[p]}</span></div>`).join('')}</div></div>` : '';
+      // Reparto como el winrate: cada empate, medio juego para cada uno (suma 100 %).
+      const share = { ricky: (dg.outright.ricky + dg.ties / 2) / dg.days, pablo: (dg.outright.pablo + dg.ties / 2) / dg.days };
+      const sp = pcts(share);
+      const leader = dg.points.ricky === dg.points.pablo ? null : dg.points.ricky > dg.points.pablo ? 'ricky' : 'pablo';
+      const duel = `<div class="blk"><p class="blk-lbl">Duelo ${current === 'hist' ? 'histórico' : T.find((t) => t.id === current).label} · ${days(dg.days)} · desde ${at(dg.firstDay).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).replace('.', '')}</p>
+        <div class="h2h-row"><div class="top"><span class="c-ricky" style="color:var(--pc)"><b>${dg.points.ricky}</b></span><span class="muted" style="font-size:12.5px">${leader ? `manda ${PL[leader]}` : 'igualados'} · ${dg.ties} emp.</span><span class="c-pablo" style="color:var(--pc)"><b>${dg.points.pablo}</b></span></div>
+        <div class="split" role="img" aria-label="Ricky ${sp.ricky}, Pablo ${sp.pablo}"><i style="width:${share.ricky * 100}%;background:var(--ricky)"></i><i style="width:${share.pablo * 100}%;background:var(--pablo)"></i></div>
+        <div class="top pct-row"><span class="c-ricky" style="color:var(--pc)">${sp.ricky}</span><span class="c-pablo" style="color:var(--pc)">${sp.pablo}</span></div></div></div>`;
+      // Medianas del MISMO tramo que el duelo de arriba: solo así se pueden comparar los tres.
+      const rec = dg.medians ?? D.records.byGame[g].personal;
+      const medLbl = current === 'hist' ? 'todo el histórico' : T.find((t) => t.id === current).label;
+      const med = `<div class="blk"><p class="blk-lbl">Mediana · ${medLbl}</p><div class="trip">${TRIO.map((p) => `<div class="c-${p}"><span class="n">${time(rec[p].median)}</span><span class="w">${PL[p]}${rec[p].count ? ` · ${days(rec[p].count)}` : ''}</span></div>`).join('')}</div></div>`;
+      return `<article class="panel gcard"><h3>${GL[g]}</h3>${trio}${duel}${med}</article>`;
+    }).join('');
+    };
+    render();
+    seg.addEventListener('click', (e) => {
+      const b = e.target.closest('button[data-id]');
+      if (!b || b.dataset.id === current) return;
+      current = b.dataset.id;
+      render();
+    });
+  })();
+
+  // ---- récords
+  (() => {
+    $('records').innerHTML = GAMES.map((g) => {
+      const r = D.records.byGame[g];
+      const o = r.overall;
+      const head = o.length ? `<p class="rec-time">${time(o[0].t)}</p><p>${o.map((x) => `<span class="rec-who c-${x.player}">${PL[x.player]}</span> <span class="muted">· ${dShortY(x.date)}</span>`).join('<br>')}</p>` : '<p class="muted">Sin datos</p>';
+      const personal = `<div class="trip">${TRIO.map((p) => `<div class="c-${p}"><span class="n">${time(r.personal[p].best?.t)}</span><span class="w">${PL[p]}${r.personal[p].best ? ` · ${dShortY(r.personal[p].best.date)}` : ''}</span></div>`).join('')}</div>`;
+      return `<article class="panel gcard"><h3>${GL[g]}</h3><div>${head}</div><div class="blk"><p class="blk-lbl">Mejor de cada uno</p>${personal}</div></article>`;
+    }).join('');
+  })();
+
+  // ---- evolución
+  (() => {
+    const M = D.monthly.filter((m) => m.duel.validDays > 0);
+    if (M.length < 2) { $('evo').innerHTML = '<p class="muted">Hacen falta al menos dos meses con días válidos.</p>'; return; }
+    const W = 640, H = 250, L = 44, R = 104, TOP = 16, B = 40;
+    const vals = M.flatMap((m) => DUEL.map((p) => m.duel.winrate[p])).filter((v) => v !== null);
+    const span = Math.min(0.5, Math.ceil((Math.max(...vals.map((v) => Math.abs(v - 0.5))) + 0.02) * 10) / 10);
+    const lo = 0.5 - span, hi = 0.5 + span;
+    const x = (i) => L + (i * (W - L - R)) / (M.length - 1);
+    const y = (v) => TOP + ((hi - v) * (H - TOP - B)) / (hi - lo);
+    const ticks = [lo, 0.5 - span / 2, 0.5, 0.5 + span / 2, hi];
+    let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Winrate mensual del duelo">`;
+    svg += ticks.map((v) => `<line class="grid${v === 0.5 ? ' mid' : ''}" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text class="axis" x="${L - 8}" y="${y(v) + 4}" text-anchor="end">${Math.round(v * 100)}%</text>`).join('');
+    svg += M.map((m, i) => `<text class="axis" x="${x(i)}" y="${H - B + 18}" text-anchor="middle">${mShort(m.month)}</text><text class="axis" x="${x(i)}" y="${H - B + 32}" text-anchor="middle" style="font-size:10px">${m.duel.validDays}d${m.partial ? '*' : ''}</text>`).join('');
+    for (const p of DUEL) {
+      const pts = M.map((m, i) => (m.duel.winrate[p] === null ? null : [x(i), y(m.duel.winrate[p])]));
+      const d = pts.map((pt, i) => (pt ? `${i && pts[i - 1] ? 'L' : 'M'}${pt[0].toFixed(1)},${pt[1].toFixed(1)}` : '')).join('');
+      svg += `<path class="line" d="${d}" style="stroke:var(--${p})"/>`;
+      svg += pts.map((pt, i) => (pt ? `<circle cx="${pt[0]}" cy="${pt[1]}" r="${i === pts.length - 1 ? 4.5 : 3}" style="fill:${M[i].partial ? 'var(--surface)' : `var(--${p})`};stroke:var(--${p});stroke-width:2"/>` : '')).join('');
+      const last = pts.at(-1);
+      if (last) svg += `<text class="end" x="${last[0] + 9}" y="${last[1] + 4}" style="fill:var(--${p})">${PL[p]} ${pcts(M.at(-1).duel.winrate)[p].replace(' ', '')}</text>`;
+    }
+    svg += '</svg>';
+    const trioMonths = D.monthly.filter((m) => m.trio.validDays > 0);
+    const trioTbl = trioMonths.length ? `<div><p class="eyebrow" style="margin:6px 0 8px">Trío por mes</p><div class="scroll"><table><thead><tr><th>Mes</th><th>Días</th>${TRIO.map((p) => `<th>${PL[p]}</th>`).join('')}</tr></thead><tbody>${trioMonths.map((m) => `<tr><td>${mShort(m.month)}${m.partial ? '*' : ''}</td><td>${m.trio.validDays}</td>${TRIO.map((p) => `<td class="c-${p}" style="color:var(--pc)">${pcts(m.trio.winrate)[p]}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="note-sm">Winrate del trío (los empates se reparten); con pocos días todavía no marca tendencia.</p></div>` : '';
+    $('evo').innerHTML = `${svg}<p class="note-sm">Parte de los juegos que gana cada uno; un empate da medio juego a cada uno, así que siempre suma 100 %. Debajo de cada mes, los días válidos; * mes en curso.</p>${trioTbl}`;
+  })();
+
+  // ---- pie
+  $('footer').innerHTML = `
+    <p>Solo salen Ricky, Pablo y Ros. Los tiempos vienen directamente de LinkedIn desde el ${D.firstLinkedinApiDate ? dShort(D.firstLinkedinApiDate) : '—'}; el duelo Ricky – Pablo usa además los resultados que mandabais por WhatsApp desde el 20 mar 2026.</p>
+    <p>Cada juego da 1 punto: gana quien lo hace sin pistas y, si los dos (o los tres) usaron pistas o ninguno, el mejor tiempo. Un empate da punto a cada uno.</p>
+    <p>En las estadísticas solo cuentan los días en que todos jugaron los 4 juegos: si Ros se salta uno, ese día no cuenta para el trío, pero sí para el duelo si Ricky y Pablo hicieron los 4.</p>`;
+})();
+</script>
+
+</html>
