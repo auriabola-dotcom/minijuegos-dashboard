@@ -1,0 +1,36 @@
+{
+  "pais": "Serbia",
+  "revisado": "2026-10-24T11:45:00+02:00",
+  "nivel": "ambar",
+  "etiqueta": "Accesible · zona gris legal",
+  "titular": "Polymarket funciona desde Serbia y no hay ninguna medida contra él, pero la ley serbia no lo ampara.",
+  "resumen": [
+    "Polymarket no bloquea Serbia: el país no aparece en su lista oficial de países bloqueados ni en la de «solo cerrar posiciones».",
+    "La Uprava za igre na sreću (UIS, regulador del juego del Ministerio de Finanzas) no ha publicado nada sobre Polymarket ni sobre mercados de predicción. Su última nota sobre juego online ilegal (18-05-2026) solo pide comprobar la lista oficial de operadores autorizados, y Polymarket no está en ella.",
+    "La Ley de Juegos de Azar prohíbe participar en juegos organizados en el extranjero cuando la apuesta se paga desde Serbia. Si un día se considera juego a los mercados de predicción, Polymarket entra en ese supuesto. Desde octubre de 2020 los operadores de telecomunicaciones bloquean las webs de una lista negra de la UIS, que no es pública.",
+    "En Europa la tendencia es claramente a bloquear: en 2025-2026 lo han hecho Bélgica, Rumanía, Portugal, España, Francia, Italia, Polonia, Dinamarca y Suiza, entre otros. Serbia es candidata a la UE y suele alinearse con lo que se hace allí."
+  ],
+  "vigilar": [
+    "Que Serbia («RS») aparezca en la lista de geobloqueo de Polymarket",
+    "Que la UIS incluya polymarket.com en su lista negra o se pronuncie sobre los mercados de predicción",
+    "Reformas de la Ley de Juegos de Azar o de la Ley de Activos Digitales (Banco Nacional de Serbia)",
+    "Bloqueos nuevos en la región (Croacia, Hungría, Eslovenia, Montenegro, Bosnia, Macedonia del Norte)"
+  ],
+  "historial": [
+    {
+      "fecha": "2026-10-24",
+      "nivel": "ambar",
+      "cambio": "Primera revisión. Polymarket accesible desde Serbia y sin medidas del regulador; encaje legal dudoso."
+    }
+  ],
+  "fuentes": [
+    { "titulo": "Polymarket: geobloqueo (documentación oficial)", "url": "https://docs.polymarket.com/api-reference/geoblock" },
+    { "titulo": "UIS: novedades", "url": "https://www.uis.gov.rs/rsl/aktuelnosti" },
+    { "titulo": "UIS: guía sobre el juego online ilegal (2026)", "url": "https://uis.gov.rs/static/uploads/4094_Smernice_za_zastitu_korisnika_od_nk.pdf" },
+    { "titulo": "UIS: lista oficial de operadores autorizados", "url": "https://www.uis.gov.rs/rsc/spisakpnaziv" },
+    { "titulo": "RFE/RL: Serbia filtra internet por las casas de apuestas (2020)", "url": "https://www.slobodnaevropa.org/a/srbija-filtrira-internet-zbog-kladionica/30952526.html" },
+    { "titulo": "RATEL: aviso a los operadores de internet sobre juegos de azar", "url": "https://ratel.rs/sr/blog-posts-view-all/upozorenje-internet-operatorima-u-vezi-sa-igrama-na-sretshu" },
+    { "titulo": "European Gaming: los mercados de predicción en Europa (2026)", "url": "https://europeangaming.eu/portal/latest-news/2026/05/21/204906/prediction-markets-regulation-in-europe-legal-tracker-2026/" },
+    { "titulo": "StartPolymarket: Polymarket en Serbia", "url": "https://startpolymarket.com/countries/serbia/" }
+  ]
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Polymarket en Serbia</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #eef0ec; --surface: #fbfcfa; --ink: #14171a; --muted: #5b626a; --line: #d3d8d0;
+  --verde: #1f7a4d; --verde-soft: #d8efe2;
+  --ambar: #9a6200; --ambar-soft: #fbefd0;
+  --rojo: #b3261e; --rojo-soft: #f9dedc;
+  --link: #2553c7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111416; --surface: #1a1e21; --ink: #e8ebe6; --muted: #9aa3ab; --line: #2c3236;
+    --verde: #5fcf94; --verde-soft: #183427;
+    --ambar: #f0b648; --ambar-soft: #3a2d12;
+    --rojo: #f08a82; --rojo-soft: #3d1c1a;
+    --link: #8fb0ff;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 "Instrument Sans", system-ui, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+h1 { font-size: 1.6rem; line-height: 1.2; margin: 0 0 4px; letter-spacing: -.01em; }
+.sub { color: var(--muted); margin: 0 0 24px; }
+.box { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--c); border-radius: 12px; padding: 22px 22px 18px; }
+.top { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .9rem; padding: 5px 12px 5px 10px; border-radius: 999px; background: var(--c-soft); color: var(--c); }
+.pill::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.fecha { font: 500 .8rem "IBM Plex Mono", monospace; color: var(--muted); }
+.titular { font-size: 1.15rem; font-weight: 600; margin: 0 0 12px; }
+h2 { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 22px 0 8px; font-weight: 600; }
+ul { margin: 0; padding-left: 20px; }
+li { margin: 0 0 6px; }
+.hist { list-style: none; padding: 0; }
+.hist li { display: grid; grid-template-columns: 92px 1fr; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); margin: 0; }
+.hist .d { font: 500 .8rem/1.9 "IBM Plex Mono", monospace; color: var(--muted); }
+.hist .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+a { color: var(--link); }
+.fuentes { font-size: .9rem; }
+.nota { color: var(--muted); font-size: .82rem; margin-top: 18px; }
+.lv-verde { --c: var(--verde); --c-soft: var(--verde-soft); }
+.lv-ambar { --c: var(--ambar); --c-soft: var(--ambar-soft); }
+.lv-rojo  { --c: var(--rojo);  --c-soft: var(--rojo-soft); }
+.err { color: var(--muted); }
+@media (max-width: 480px) { .hist li { grid-template-columns: 1fr; gap: 2px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Polymarket en Serbia</h1>
+  <p class="sub">Revisión diaria de su situación legal y de acceso, y de lo que puede cambiar</p>
+
+  <section id="box" class="box lv-ambar" aria-live="polite">
+    <p class="err">Cargando…</p>
+  </section>
+
+  <p class="nota">Leyenda: <b>verde</b> = accesible y sin riesgo regulatorio a la vista · <b>ámbar</b> = accesible, pero con encaje legal dudoso o señales de cambio · <b>rojo</b> = bloqueado o prohibido. Esto es un seguimiento informativo, no asesoramiento legal.</p>
+</main>
+<script>
+(async () => {
+  const box = document.getElementById('box');
+  const NIVEL = { verde: 'Verde', ambar: 'Ámbar', rojo: 'Rojo' };
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmt = iso => {
+    const d = new Date(iso);
+    if (isNaN(d)) return esc(iso);
+    return d.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  };
+  try {
+    const r = await fetch(`estado.json?t=${Date.now()}`, { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    const e = await r.json();
+    const lv = NIVEL[e.nivel] ? e.nivel : 'ambar';
+    box.className = `box lv-${lv}`;
+    box.innerHTML = `
+      <div class="top">
+        <span class="pill">${esc(e.etiqueta || NIVEL[lv])}</span>
+        <span class="fecha">Revisado: ${fmt(e.revisado)}</span>
+      </div>
+      <p class="titular">${esc(e.titular || '')}</p>
+      <ul>${(e.resumen || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+      <h2>Qué estoy vigilando</h2>
+      <ul>${(e.vigilar || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+      <h2>Cambios</h2>
+      <ul class="hist">${(e.historial || []).slice().reverse().map(h => {
+        const hl = NIVEL[h.nivel] ? h.nivel : 'ambar';
+        return `<li class="lv-${hl}"><span class="d"><span class="dot" style="background:var(--c)"></span>${esc(h.fecha)}</span><span>${esc(h.cambio)}</span></li>`;
+      }).join('')}</ul>
+      <h2>Fuentes</h2>
+      <ul class="fuentes">${(e.fuentes || []).map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a></li>`).join('')}</ul>`;
+  } catch (err) {
+    box.innerHTML = '<p class="err">No se pudo cargar el estado (estado.json). Prueba a recargar.</p>';
+  }
+})();
+</script>
+</body>
+</html>
