@@ -27,78 +27,112 @@
   }
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 "Instrument Sans", system-ui, sans-serif; }
-main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
-h1 { font-size: 1.6rem; line-height: 1.2; margin: 0 0 4px; letter-spacing: -.01em; }
-.sub { color: var(--muted); margin: 0 0 24px; }
-.box { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--c); border-radius: 12px; padding: 22px 22px 18px; }
-.top { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 "Instrument Sans", system-ui, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; margin-bottom: 16px; }
+h1 { font-size: 1.5rem; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
+.mono { font: 500 .8rem "IBM Plex Mono", monospace; color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; }
+.hero { border-left: 6px solid var(--c); }
+.hero .row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 10px; }
 .pill { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .9rem; padding: 5px 12px 5px 10px; border-radius: 999px; background: var(--c-soft); color: var(--c); }
 .pill::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
-.fecha { font: 500 .8rem "IBM Plex Mono", monospace; color: var(--muted); }
-.titular { font-size: 1.15rem; font-weight: 600; margin: 0 0 12px; }
-h2 { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 22px 0 8px; font-weight: 600; }
-ul { margin: 0; padding-left: 20px; }
-li { margin: 0 0 6px; }
-.hist { list-style: none; padding: 0; }
-.hist li { display: grid; grid-template-columns: 92px 1fr; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); margin: 0; }
-.hist .d { font: 500 .8rem/1.9 "IBM Plex Mono", monospace; color: var(--muted); }
-.hist .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
-a { color: var(--link); }
-.fuentes { font-size: .9rem; }
-.nota { color: var(--muted); font-size: .82rem; margin-top: 18px; }
+.tag { font-size: .82rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.tag.nuevo { background: var(--rojo-soft); color: var(--rojo); border-color: transparent; }
+.titular { font-size: 1.2rem; font-weight: 600; margin: 0; }
+h2 { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+.ind { list-style: none; margin: 0; padding: 0; }
+.ind li { display: grid; grid-template-columns: 22px 1fr auto; gap: 2px 10px; align-items: start; padding: 10px 0; border-top: 1px solid var(--line); }
+.ind li:first-child { border-top: 0; padding-top: 0; }
+.ind .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--c); margin-top: 6px; }
+.ind .t { font-weight: 600; }
+.ind .v { font-weight: 600; color: var(--c); text-align: right; white-space: nowrap; }
+.ind .d { grid-column: 2 / 4; color: var(--muted); font-size: .9rem; }
+.st-ok { --c: var(--verde); --c-soft: var(--verde-soft); }
+.st-ojo { --c: var(--ambar); --c-soft: var(--ambar-soft); }
+.st-mal { --c: var(--rojo); --c-soft: var(--rojo-soft); }
 .lv-verde { --c: var(--verde); --c-soft: var(--verde-soft); }
 .lv-ambar { --c: var(--ambar); --c-soft: var(--ambar-soft); }
 .lv-rojo  { --c: var(--rojo);  --c-soft: var(--rojo-soft); }
+ul.plain { margin: 0; padding-left: 18px; }
+ul.plain li { margin: 0 0 6px; }
+.fechas { list-style: none; margin: 0; padding: 0; }
+.fechas li { display: flex; gap: 12px; align-items: baseline; }
+.fechas .n { font: 600 1.4rem "IBM Plex Mono", monospace; min-width: 4.5ch; }
+.hist { list-style: none; margin: 0; padding: 0; }
+.hist li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+.hist li:first-child { border-top: 0; padding-top: 0; }
+.hist .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--c); }
+details summary { cursor: pointer; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+details ul { margin: 10px 0 0; padding-left: 18px; font-size: .9rem; }
+a { color: var(--link); }
+.nota { color: var(--muted); font-size: .8rem; margin-top: 8px; }
 .err { color: var(--muted); }
-@media (max-width: 480px) { .hist li { grid-template-columns: 1fr; gap: 2px; } }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cols .card { margin-bottom: 0; }
+.cols + .card, .cols { margin-bottom: 14px; }
+@media (max-width: 600px) { .cols { grid-template-columns: 1fr; } .hist li { grid-template-columns: 1fr; gap: 2px; } }
 </style>
 </head>
 <body>
 <main>
-  <h1>Polymarket en Finlandia</h1>
-  <p class="sub">Revisión diaria de su situación legal y de acceso, y de lo que puede cambiar</p>
-
-  <section id="box" class="box lv-ambar" aria-live="polite">
-    <p class="err">Cargando…</p>
-  </section>
-
-  <p class="nota">Leyenda: <b>verde</b> = accesible y sin riesgo regulatorio a la vista · <b>ámbar</b> = accesible, pero con encaje legal dudoso o señales de cambio · <b>rojo</b> = bloqueado o prohibido. Esto es un seguimiento informativo, no asesoramiento legal.</p>
+  <header>
+    <h1>Polymarket en Finlandia</h1>
+    <span class="mono" id="rev"></span>
+  </header>
+  <div id="app" aria-live="polite"><p class="err">Cargando…</p></div>
+  <p class="nota">Verde = todo bien · Ámbar = atención · Rojo = problema. Se revisa cada mañana. Informativo, no es asesoramiento legal ni fiscal.</p>
 </main>
 <script>
 (async () => {
-  const box = document.getElementById('box');
+  const app = document.getElementById('app');
   const NIVEL = { verde: 'Verde', ambar: 'Ámbar', rojo: 'Rojo' };
-  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const fmt = iso => {
-    const d = new Date(iso);
-    if (isNaN(d)) return esc(iso);
-    return d.toLocaleString('es-ES', { timeZone: 'Europe/Madrid', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-  };
+  const ST = { ok: 'ok', ojo: 'ojo', mal: 'mal' };
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const tz = { timeZone: 'Europe/Madrid' };
+  const dia = iso => new Date(iso).toLocaleDateString('en-CA', tz);
+  const dias = (a, b) => Math.round((new Date(b + 'T00:00:00Z') - new Date(a + 'T00:00:00Z')) / 864e5);
   try {
     const r = await fetch(`estado.json?t=${Date.now()}`, { cache: 'no-store' });
     if (!r.ok) throw new Error(r.status);
     const e = await r.json();
     const lv = NIVEL[e.nivel] ? e.nivel : 'ambar';
-    box.className = `box lv-${lv}`;
-    box.innerHTML = `
-      <div class="top">
-        <span class="pill">${esc(e.etiqueta || NIVEL[lv])}</span>
-        <span class="fecha">Revisado: ${fmt(e.revisado)}</span>
+    const rev = new Date(e.revisado);
+    document.getElementById('rev').textContent = isNaN(rev) ? '' :
+      'Revisado: ' + rev.toLocaleString('es-ES', { ...tz, day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    const hoy = dia(new Date());
+    const hist = (e.historial || []).slice().sort((a, b) => a.fecha < b.fecha ? 1 : -1);
+    const ultimo = hist[0]?.fecha;
+    const nuevo = ultimo && !isNaN(rev) && ultimo === dia(rev) && hist.length > 1;
+    const sinCambios = ultimo ? dias(ultimo, hoy) : null;
+    const tag = nuevo ? '<span class="tag nuevo">Novedad hoy</span>'
+      : sinCambios !== null ? `<span class="tag">${sinCambios === 0 ? 'Revisado hoy' : `${sinCambios} día${sinCambios === 1 ? '' : 's'} sin novedades`}</span>` : '';
+    const ind = (e.indicadores || []).map(i => {
+      const s = ST[i.estado] || 'ojo';
+      return `<li class="st-${s}"><span class="dot"></span><span class="t">${esc(i.titulo)}</span><span class="v">${esc(i.valor)}</span><span class="d">${esc(i.detalle)}</span></li>`;
+    }).join('');
+    const fechas = (e.fechas || []).map(f => {
+      const n = dias(hoy, f.fecha);
+      return `<li><span class="n">${n >= 0 ? n : '—'}</span><span>días · <b>${esc(new Date(f.fecha + 'T12:00:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' }))}</b><br><span class="mono" style="font-family:inherit;font-size:.9rem">${esc(f.texto)}</span></span></li>`;
+    }).join('');
+    app.innerHTML = `
+      <section class="card hero lv-${lv}">
+        <div class="row"><span class="pill">${esc(e.etiqueta || NIVEL[lv])}</span>${tag}</div>
+        <p class="titular">${esc(e.titular)}</p>
+      </section>
+      <section class="card"><h2>Lo importante</h2><ul class="ind">${ind}</ul></section>
+      <div class="cols">
+        <section class="card"><h2>Si un día bloquean</h2><ul class="plain">${(e.si_bloquean || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></section>
+        <section class="card"><h2>Próxima fecha clave</h2><ul class="fechas">${fechas}</ul>
+          <h2 style="margin-top:16px">Qué vigilo</h2><ul class="plain">${(e.vigilar || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></section>
       </div>
-      <p class="titular">${esc(e.titular || '')}</p>
-      <ul>${(e.resumen || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
-      <h2>Qué estoy vigilando</h2>
-      <ul>${(e.vigilar || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
-      <h2>Cambios</h2>
-      <ul class="hist">${(e.historial || []).slice().reverse().map(h => {
+      <section class="card"><h2>Cambios</h2><ul class="hist">${hist.map(h => {
         const hl = NIVEL[h.nivel] ? h.nivel : 'ambar';
-        return `<li class="lv-${hl}"><span class="d"><span class="dot" style="background:var(--c)"></span>${esc(h.fecha)}</span><span>${esc(h.cambio)}</span></li>`;
-      }).join('')}</ul>
-      <h2>Fuentes</h2>
-      <ul class="fuentes">${(e.fuentes || []).map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a></li>`).join('')}</ul>`;
+        return `<li class="lv-${hl}"><span class="mono"><span class="dot"></span>${esc(h.fecha)}</span><span>${esc(h.cambio)}</span></li>`;
+      }).join('')}</ul></section>
+      <section class="card"><details><summary>Fuentes (${(e.fuentes || []).length})</summary><ul>${(e.fuentes || []).map(f => `<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.titulo)}</a></li>`).join('')}</ul></details></section>`;
   } catch (err) {
-    box.innerHTML = '<p class="err">No se pudo cargar el estado (estado.json). Prueba a recargar.</p>';
+    app.innerHTML = '<p class="err">No se pudo cargar el estado (estado.json). Prueba a recargar.</p>';
   }
 })();
 </script>

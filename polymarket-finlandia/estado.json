@@ -2,27 +2,73 @@
   "pais": "Finlandia",
   "revisado": "2026-10-25T11:05:52+01:00",
   "nivel": "ambar",
-  "etiqueta": "Accesible · zona gris legal",
-  "titular": "Polymarket funciona en Finlandia y al usuario no le persiguen por usarlo, pero no tiene licencia finlandesa y la ley del juego se endurece en 2027.",
-  "resumen": [
-    "Polymarket no bloquea Finlandia: «FI» no aparece en su lista oficial de países bloqueados ni en la de «solo cerrar posiciones» (comprobado el 25-10-2026). Puedes registrarte, depositar y operar con normalidad.",
-    "Para el usuario no es delito: la ley finlandesa persigue a quien organiza juego sin permiso y a quien lo anuncia, no al jugador. No consta ninguna sanción a usuarios finlandeses de Polymarket ni ninguna actuación de la Policía Nacional (Poliisihallitus) contra la web.",
-    "Ojo con Hacienda (Vero): las ganancias de juego organizado fuera de la UE/EEE tributan como renta del trabajo, apuesta por apuesta (las pérdidas no compensan las ganancias). Polymarket no está en la UE, así que conviene declarar los beneficios y guardar el historial 5 años; también pueden aplicarse las reglas de cripto.",
-    "Lo que viene: la nueva Ley del Juego (firmada el 16-01-2026) acaba con el monopolio de Veikkaus el 1-7-2027. Desde entonces el nuevo regulador (Lupa- ja valvontavirasto) podrá ordenar retirar contenidos y sancionar a operadores sin licencia. Polymarket no tiene licencia finlandesa.",
-    "En el entorno nórdico se bloquea cada vez más: Dinamarca bloquea polymarket.com por DNS desde agosto de 2026 y Noruega ha avisado a Polymarket de que puede bloquearlo (octubre de 2026). Suecia no puede bloquear webs, pero quiere más poderes desde 2027."
+  "etiqueta": "Todo bien, con vigilancia",
+  "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
+  "indicadores": [
+    {
+      "titulo": "¿Puedo usar Polymarket?",
+      "estado": "ok",
+      "valor": "Sí, sin límites",
+      "detalle": "Registro, depósitos, apuestas y retiradas normales."
+    },
+    {
+      "titulo": "¿Polymarket bloquea Finlandia?",
+      "estado": "ok",
+      "valor": "No",
+      "detalle": "«FI» no está en su lista de bloqueo ni en la de «solo cerrar»."
+    },
+    {
+      "titulo": "¿El Gobierno bloquea la web?",
+      "estado": "ok",
+      "valor": "No",
+      "detalle": "Sin bloqueo ni lista negra en Finlandia."
+    },
+    {
+      "titulo": "¿Me pueden sancionar a mí?",
+      "estado": "ok",
+      "valor": "No",
+      "detalle": "La ley persigue al operador sin licencia, no al jugador."
+    },
+    {
+      "titulo": "Impuestos",
+      "estado": "ojo",
+      "valor": "Las ganancias tributan",
+      "detalle": "Declara los beneficios y guarda el historial 5 años."
+    },
+    {
+      "titulo": "Ley nueva del juego",
+      "estado": "ojo",
+      "valor": "Desde el 1-7-2027",
+      "detalle": "Nuevo regulador con más poder contra webs sin licencia."
+    },
+    {
+      "titulo": "Países vecinos",
+      "estado": "ojo",
+      "valor": "Endureciendo",
+      "detalle": "Dinamarca bloquea Polymarket; Noruega lo ha avisado."
+    }
+  ],
+  "si_bloquean": [
+    "Si Finlandia pasa a «solo cerrar»: puedes cerrar TODAS tus posiciones abiertas (también las que van en pérdidas) y retirar el dinero; solo no puedes abrir apuestas nuevas.",
+    "No uses VPN para saltarte un bloqueo: va contra las normas de Polymarket y pueden cerrarte la cuenta."
+  ],
+  "fechas": [
+    {
+      "fecha": "2027-07-01",
+      "texto": "Abre el mercado del juego y empieza el nuevo regulador"
+    }
   ],
   "vigilar": [
-    "Que Finlandia («FI») aparezca en la lista de geobloqueo de Polymarket (si pasa a «solo cerrar», podrías retirar el dinero pero no abrir apuestas nuevas)",
-    "Que la Policía Nacional o el nuevo regulador actúen contra Polymarket o lo incluyan en una lista de webs ilegales",
-    "La apertura del mercado el 1-7-2027 y si Finlandia añade bloqueos de DNS o de pagos",
-    "Criterios de Vero sobre cómo tributan los mercados de predicción",
-    "Bloqueos en Suecia, Noruega y Estonia, y el pleito de Polymarket contra los Países Bajos"
+    "Finlandia en la lista de bloqueo de Polymarket",
+    "Medidas del regulador o del Gobierno contra Polymarket",
+    "Criterio de Hacienda (Vero) sobre los mercados de predicción",
+    "Bloqueos en Suecia, Noruega o Estonia"
   ],
   "historial": [
     {
       "fecha": "2026-10-25",
       "nivel": "ambar",
-      "cambio": "Primera revisión de Finlandia (sustituye al seguimiento de Serbia). Polymarket accesible; el usuario no comete delito; ganancias tributables; endurecimiento previsto en 2027."
+      "cambio": "Primera revisión. Polymarket accesible; el usuario no comete delito; ganancias tributables; endurecimiento previsto en 2027."
     }
   ],
   "fuentes": [
@@ -55,12 +101,12 @@
       "url": "https://www.dagensps.se/bors-finans/norge-vill-blockera-polymarket-sverige-saknar-verktygetnorge-vill/"
     },
     {
-      "titulo": "StartPolymarket: Polymarket en Finlandia",
-      "url": "https://startpolymarket.com/de/laender/finland/"
-    },
-    {
       "titulo": "NL Times: Polymarket recurre la prohibición neerlandesa (05-10-2026)",
       "url": "https://nltimes.nl/2026/10/05/us-prediction-site-polymarket-fight-dutch-ban-court"
+    },
+    {
+      "titulo": "Polymarket: qué se puede hacer en países «solo cerrar»",
+      "url": "https://docs.polymarket.com/polymarket-learn/FAQ/geoblocking"
     }
   ]
 }
