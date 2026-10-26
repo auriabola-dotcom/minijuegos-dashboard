@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-10-25T11:05:52+01:00",
+  "revisado": "2026-10-26T08:00:45+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -45,7 +45,7 @@
       "titulo": "Países vecinos",
       "estado": "ojo",
       "valor": "Endureciendo",
-      "detalle": "Dinamarca bloquea Polymarket; Noruega lo ha avisado."
+      "detalle": "Dinamarca y Lituania bloquean Polymarket; Noruega lo decide ya."
     }
   ],
   "si_bloquean": [
@@ -62,7 +62,8 @@
     "Finlandia en la lista de bloqueo de Polymarket",
     "Medidas del regulador o del Gobierno contra Polymarket",
     "Criterio de Hacienda (Vero) sobre los mercados de predicción",
-    "Bloqueos en Suecia, Noruega o Estonia"
+    "Decisión de Noruega sobre el bloqueo",
+    "Bloqueos en Suecia o Estonia"
   ],
   "historial": [
     {
@@ -85,24 +86,24 @@
       "url": "https://www.vero.fi/syventavat-vero-ohjeet/ennakkoratkaisut/354985/kvl0392025/"
     },
     {
-      "titulo": "iGamingToday: la nueva Ley del Juego, firmada y con calendario para 2027",
-      "url": "https://www.igamingtoday.com/finlands-new-gambling-act-is-now-signed-published-and-set-on-a-2027-launch-track/"
-    },
-    {
       "titulo": "Borenius: guía práctica de la reforma del juego (28-05-2026)",
       "url": "https://www.borenius.com/insights/2026/05/28/finlands-gambling-act-reform-a-practical-guide-to-the-new-licensing-regime/"
+    },
+    {
+      "titulo": "Adressa: Noruega avisa a Polymarket de bloqueo, decisión pendiente (08-10-2026)",
+      "url": "https://www.adressa.no/nyheter/innenriks/i/aOOwgM/lotteritilsynet-polymarket-har-faatt-blokkeringsvarsel"
+    },
+    {
+      "titulo": "Rahapelisanomat: Lituania bloquea Polymarket (24-09-2026)",
+      "url": "https://rahapelisanomat.fi/liettua-stop-polymarketille/"
     },
     {
       "titulo": "European Gaming: Dinamarca bloquea Polymarket (20-08-2026)",
       "url": "https://europeangaming.eu/portal/latest-news/2026/08/20/212965/denmark-blocks-polymarket-and-97-other-sites/"
     },
     {
-      "titulo": "Dagens PS: Noruega quiere bloquear Polymarket; Suecia no puede (08-10-2026)",
-      "url": "https://www.dagensps.se/bors-finans/norge-vill-blockera-polymarket-sverige-saknar-verktygetnorge-vill/"
-    },
-    {
-      "titulo": "NL Times: Polymarket recurre la prohibición neerlandesa (05-10-2026)",
-      "url": "https://nltimes.nl/2026/10/05/us-prediction-site-polymarket-fight-dutch-ban-court"
+      "titulo": "EMTA (Estonia): lista de webs de juego bloqueadas",
+      "url": "https://emta.ee/ariklient/registreerimine-ettevotlus/hasartmangukorraldajale/blokeeritud-hasartmangu"
     },
     {
       "titulo": "Polymarket: qué se puede hacer en países «solo cerrar»",
