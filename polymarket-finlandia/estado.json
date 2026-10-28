@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-10-27T08:05:08+01:00",
+  "revisado": "2026-10-28T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -75,7 +75,7 @@
   "fuentes": [
     {
       "titulo": "Polymarket: geobloqueo (documentación oficial)",
-      "url": "https://docs.polymarket.com/api-reference/geoblock.md"
+      "url": "https://docs.polymarket.com/api-reference/geoblock"
     },
     {
       "titulo": "Vero: tributación de ganancias de juego fuera de la UE/EEE (2023)",
@@ -90,12 +90,8 @@
       "url": "https://www.borenius.com/insights/2026/05/28/finlands-gambling-act-reform-a-practical-guide-to-the-new-licensing-regime/"
     },
     {
-      "titulo": "Adressa: Noruega avisa a Polymarket de bloqueo, decisión pendiente (08-10-2026)",
-      "url": "https://www.adressa.no/nyheter/innenriks/i/aOOwgM/lotteritilsynet-polymarket-har-faatt-blokkeringsvarsel"
-    },
-    {
-      "titulo": "AffPapa: Noruega, plazo de alegaciones hasta el 15-10-2026; decisión pendiente (12-10-2026)",
-      "url": "https://affpapa.com/norway-to-block-kalshi-polymarket-60-more-illegal-websites/"
+      "titulo": "Dagens PS: Noruega ya avisó del bloqueo; Suecia sin esa herramienta (08-10-2026)",
+      "url": "https://www.dagensps.se/bors-finans/norge-vill-blockera-polymarket-sverige-saknar-verktygetnorge-vill/"
     },
     {
       "titulo": "Rahapelisanomat: Lituania bloquea Polymarket (24-09-2026)",
