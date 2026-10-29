@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-10-28T08:05:00+01:00",
+  "revisado": "2026-10-29T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -90,8 +90,12 @@
       "url": "https://www.borenius.com/insights/2026/05/28/finlands-gambling-act-reform-a-practical-guide-to-the-new-licensing-regime/"
     },
     {
-      "titulo": "Dagens PS: Noruega ya avisó del bloqueo; Suecia sin esa herramienta (08-10-2026)",
-      "url": "https://www.dagensps.se/bors-finans/norge-vill-blockera-polymarket-sverige-saknar-verktygetnorge-vill/"
+      "titulo": "E24: Noruega avisa del bloqueo DNS de Polymarket (08-10-2026)",
+      "url": "https://e24.no/naeringsliv/i/77p9XB/lotteritilsynet-blokkerer-polymarket"
+    },
+    {
+      "titulo": "Bright Side of News: Finlandia concede las 12 primeras licencias (27-10-2026)",
+      "url": "https://brightsideofnews.com/gambling/finland-first-12-online-gambling-licences/"
     },
     {
       "titulo": "Rahapelisanomat: Lituania bloquea Polymarket (24-09-2026)",
