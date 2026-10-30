@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-10-29T08:05:00+01:00",
+  "revisado": "2026-10-30T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -74,8 +74,8 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: geobloqueo (documentación oficial)",
-      "url": "https://docs.polymarket.com/api-reference/geoblock"
+      "titulo": "Polymarket: geobloqueo (documentación oficial, revisada 30-10-2026)",
+      "url": "https://docs.polymarket.com/api-reference/geoblock.md"
     },
     {
       "titulo": "Vero: tributación de ganancias de juego fuera de la UE/EEE (2023)",
@@ -98,8 +98,8 @@
       "url": "https://brightsideofnews.com/gambling/finland-first-12-online-gambling-licences/"
     },
     {
-      "titulo": "Rahapelisanomat: Lituania bloquea Polymarket (24-09-2026)",
-      "url": "https://rahapelisanomat.fi/liettua-stop-polymarketille/"
+      "titulo": "Sumsub: la Policía finlandesa multa la promoción de juego ilegal (15-10-2026)",
+      "url": "https://sumsub.com/media/news/finland-targets-gambling-promoters-2027-market-opening/"
     },
     {
       "titulo": "European Gaming: Dinamarca bloquea Polymarket (20-08-2026)",
