@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-10-30T08:05:00+01:00",
+  "revisado": "2026-10-31T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -9,7 +9,7 @@
       "titulo": "¿Puedo usar Polymarket?",
       "estado": "ok",
       "valor": "Sí, sin límites",
-      "detalle": "Registro, depósitos, apuestas y retiradas normales."
+      "detalle": "Funciona normal. Hackeo el 29-10: Polymarket reembolsa."
     },
     {
       "titulo": "¿Polymarket bloquea Finlandia?",
@@ -61,21 +61,42 @@
   "vigilar": [
     "Finlandia en la lista de bloqueo de Polymarket",
     "Medidas del regulador o del Gobierno contra Polymarket",
-    "Criterio de Hacienda (Vero) sobre los mercados de predicción",
-    "Decisión de Noruega sobre el bloqueo",
-    "Bloqueos en Suecia o Estonia"
+    "Decisión final de Noruega sobre el bloqueo",
+    "Seguridad de la cuenta tras el hackeo del 29-10",
+    "Criterio de Hacienda (Vero) sobre los mercados de predicción"
   ],
   "historial": [
     {
       "fecha": "2026-10-25",
       "nivel": "ambar",
       "cambio": "Primera revisión. Polymarket accesible; el usuario no comete delito; ganancias tributables; endurecimiento previsto en 2027."
+    },
+    {
+      "fecha": "2026-10-31",
+      "nivel": "ambar",
+      "cambio": "Hackeo a un proveedor de Polymarket (29-10): robados ~2,7 M$ de cuentas; trading parado unas horas y reembolso prometido. Nada cambia legalmente en Finlandia."
     }
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: geobloqueo (documentación oficial, revisada 30-10-2026)",
-      "url": "https://docs.polymarket.com/api-reference/geoblock.md"
+      "titulo": "Polymarket: geobloqueo (documentación oficial, revisada 31-10-2026)",
+      "url": "https://docs.polymarket.com/api-reference/geoblock"
+    },
+    {
+      "titulo": "CoinDesk: Polymarket suspende el trading tras un hackeo (29-10-2026)",
+      "url": "https://www.coindesk.com/markets/2026/10/29/polymarket-suspends-trading-after-third-party-breach-leads-to-user-losses"
+    },
+    {
+      "titulo": "Shattered: Polymarket reanuda el trading y reembolsa (29-10-2026)",
+      "url": "https://shattered.io/polymarket-resumes-trading-3-pm-et-reimburse-traders-third-party-breach-2026/"
+    },
+    {
+      "titulo": "AffPapa: Noruega avisa del bloqueo, decisión pendiente (12-10-2026)",
+      "url": "https://affpapa.com/norway-to-block-kalshi-polymarket-60-more-illegal-websites/"
+    },
+    {
+      "titulo": "Dagens PS: Suecia no tiene herramienta de bloqueo (08-10-2026)",
+      "url": "https://www.dagensps.se/bors-finans/norge-vill-blockera-polymarket-sverige-saknar-verktygetnorge-vill/"
     },
     {
       "titulo": "Vero: tributación de ganancias de juego fuera de la UE/EEE (2023)",
@@ -90,24 +111,8 @@
       "url": "https://www.borenius.com/insights/2026/05/28/finlands-gambling-act-reform-a-practical-guide-to-the-new-licensing-regime/"
     },
     {
-      "titulo": "E24: Noruega avisa del bloqueo DNS de Polymarket (08-10-2026)",
-      "url": "https://e24.no/naeringsliv/i/77p9XB/lotteritilsynet-blokkerer-polymarket"
-    },
-    {
-      "titulo": "Sumsub: la Policía finlandesa multa la promoción de juego ilegal (15-10-2026)",
-      "url": "https://sumsub.com/media/news/finland-targets-gambling-promoters-2027-market-opening/"
-    },
-    {
-      "titulo": "Rahapelisanomat: Lituania bloquea Polymarket (24-09-2026)",
-      "url": "https://rahapelisanomat.fi/liettua-stop-polymarketille/"
-    },
-    {
       "titulo": "European Gaming: Dinamarca bloquea Polymarket (20-08-2026)",
       "url": "https://europeangaming.eu/portal/latest-news/2026/08/20/212965/denmark-blocks-polymarket-and-97-other-sites/"
-    },
-    {
-      "titulo": "EMTA (Estonia): lista de webs de juego bloqueadas",
-      "url": "https://emta.ee/ariklient/registreerimine-ettevotlus/hasartmangukorraldajale/blokeeritud-hasartmangu"
     },
     {
       "titulo": "Polymarket: qué se puede hacer en países «solo cerrar»",
