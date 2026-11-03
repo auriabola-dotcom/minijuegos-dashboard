@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-02T08:05:00+01:00",
+  "revisado": "2026-11-03T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,7 +79,7 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: geobloqueo (documentación oficial, revisada 02-11-2026)",
+      "titulo": "Polymarket: geobloqueo (documentación oficial, revisada 03-11-2026)",
       "url": "https://docs.polymarket.com/api-reference/geoblock"
     },
     {
