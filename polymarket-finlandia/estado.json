@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-03T08:05:00+01:00",
+  "revisado": "2026-11-04T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,7 +79,7 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: geobloqueo (documentación oficial, revisada 03-11-2026)",
+      "titulo": "Polymarket: geobloqueo (documentación oficial, revisada 04-11-2026)",
       "url": "https://docs.polymarket.com/api-reference/geoblock"
     },
     {
@@ -95,8 +95,8 @@
       "url": "https://affpapa.com/norway-to-block-kalshi-polymarket-60-more-illegal-websites/"
     },
     {
-      "titulo": "Lottstift: bloqueos en Noruega, 62 webs aún en aviso (sin decisión final)",
-      "url": "https://lottstift.no/for-spillere/blokkering-av-ulovlige-pengespillsider/"
+      "titulo": "E24: Noruega avisa a Polymarket de bloqueo DNS, sin decisión final (08-10-2026)",
+      "url": "https://e24.no/naeringsliv/i/77p9XB/lotteritilsynet-blokkerer-polymarket"
     },
     {
       "titulo": "Vero: tributación de ganancias de juego fuera de la UE/EEE (2023)",
