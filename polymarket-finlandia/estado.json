@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-07T08:05:00+01:00",
+  "revisado": "2026-11-08T08:10:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -83,8 +83,8 @@
       "url": "https://docs.polymarket.com/api-reference/geoblock"
     },
     {
-      "titulo": "StartPolymarket: Finlandia accesible, no bloqueada (03-11-2026)",
-      "url": "https://startpolymarket.com/countries/finland/"
+      "titulo": "Polymarket: restricciones geográficas (centro de ayuda, revisado 08-11-2026)",
+      "url": "https://help.polymarket.com/en/articles/13364163-geographic-restrictions"
     },
     {
       "titulo": "CoinDesk: Polymarket suspende el trading tras un hackeo (29-10-2026)",
