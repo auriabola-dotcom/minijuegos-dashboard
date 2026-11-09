@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-08T08:10:00+01:00",
+  "revisado": "2026-11-09T08:10:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,20 +79,20 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: geobloqueo (documentación oficial)",
-      "url": "https://docs.polymarket.com/api-reference/geoblock"
+      "titulo": "Polymarket: geobloqueo (documentación oficial, revisado 09-11-2026)",
+      "url": "https://docs.polymarket.com/api-reference/geoblock.md"
     },
     {
-      "titulo": "Polymarket: restricciones geográficas (centro de ayuda, revisado 08-11-2026)",
-      "url": "https://help.polymarket.com/en/articles/13364163-geographic-restrictions"
+      "titulo": "AirdropAlert: países restringidos por Polymarket (08-11-2026)",
+      "url": "https://airdropalert.com/blogs/polymarket-restricted-countries/"
     },
     {
       "titulo": "CoinDesk: Polymarket suspende el trading tras un hackeo (29-10-2026)",
       "url": "https://www.coindesk.com/markets/2026/10/29/polymarket-suspends-trading-after-third-party-breach-leads-to-user-losses"
     },
     {
-      "titulo": "Dagens PS: Noruega avisa a Polymarket de bloqueo; Suecia sin herramienta (08-10-2026)",
-      "url": "https://www.dagensps.se/bors-finans/norge-vill-blockera-polymarket-sverige-saknar-verktygetnorge-vill/"
+      "titulo": "Palai: Noruega avisa de bloqueo DNS a Polymarket, sin orden final (12-10-2026)",
+      "url": "https://www.palai.media/en/news/norway-dns-blocking-kalshi-polymarket-gambling-sites"
     },
     {
       "titulo": "E24: Noruega avisa a Polymarket de bloqueo DNS, sin decisión final (08-10-2026)",
