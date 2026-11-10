@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-09T08:10:00+01:00",
+  "revisado": "2026-11-10T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,8 +79,8 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: geobloqueo (documentación oficial, revisado 09-11-2026)",
-      "url": "https://docs.polymarket.com/api-reference/geoblock.md"
+      "titulo": "Polymarket: restricciones geográficas (ayuda oficial, revisado 10-11-2026)",
+      "url": "https://help.polymarket.com/en/articles/13364163-geographic-restrictions"
     },
     {
       "titulo": "AirdropAlert: países restringidos por Polymarket (08-11-2026)",
