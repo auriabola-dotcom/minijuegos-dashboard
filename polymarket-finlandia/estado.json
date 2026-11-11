@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-10T08:05:00+01:00",
+  "revisado": "2026-11-11T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,7 +79,7 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: restricciones geográficas (ayuda oficial, revisado 10-11-2026)",
+      "titulo": "Polymarket: restricciones geográficas (ayuda oficial, revisado 11-11-2026)",
       "url": "https://help.polymarket.com/en/articles/13364163-geographic-restrictions"
     },
     {
@@ -91,12 +91,12 @@
       "url": "https://www.coindesk.com/markets/2026/10/29/polymarket-suspends-trading-after-third-party-breach-leads-to-user-losses"
     },
     {
-      "titulo": "Palai: Noruega avisa de bloqueo DNS a Polymarket, sin orden final (12-10-2026)",
-      "url": "https://www.palai.media/en/news/norway-dns-blocking-kalshi-polymarket-gambling-sites"
+      "titulo": "Kongebonus: Noruega solo avisa del bloqueo DNS, sin decisión final (08-10-2026)",
+      "url": "https://www.kongebonus.com/nyheter/dns-blokkering-62-nye-spillsider-varslet-sperret-i-norge/"
     },
     {
-      "titulo": "E24: Noruega avisa a Polymarket de bloqueo DNS, sin decisión final (08-10-2026)",
-      "url": "https://e24.no/naeringsliv/i/77p9XB/lotteritilsynet-blokkerer-polymarket"
+      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 11-11-2026)",
+      "url": "https://docs.polymarket.com/api-reference/geoblock"
     },
     {
       "titulo": "Vero: tributación de ganancias de juego fuera de la UE/EEE (2023)",
