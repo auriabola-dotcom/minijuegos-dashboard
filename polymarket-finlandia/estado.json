@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-12T08:05:00+01:00",
+  "revisado": "2026-11-13T07:59:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,7 +79,7 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: restricciones geográficas (ayuda oficial, revisado 12-11-2026)",
+      "titulo": "Polymarket: restricciones geográficas (ayuda oficial, revisado 13-11-2026)",
       "url": "https://help.polymarket.com/en/articles/13364163-geographic-restrictions"
     },
     {
@@ -95,7 +95,7 @@
       "url": "https://www.kongebonus.com/nyheter/dns-blokkering-62-nye-spillsider-varslet-sperret-i-norge/"
     },
     {
-      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 12-11-2026)",
+      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 13-11-2026)",
       "url": "https://docs.polymarket.com/api-reference/geoblock"
     },
     {
