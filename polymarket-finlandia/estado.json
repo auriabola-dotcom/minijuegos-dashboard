@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-18T08:10:00+01:00",
+  "revisado": "2026-11-19T08:10:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,24 +79,24 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket: restricciones geográficas (ayuda oficial, revisado 14-11-2026)",
-      "url": "https://help.polymarket.com/en/articles/13364163-geographic-restrictions"
-    },
-    {
-      "titulo": "AirdropAlert: países restringidos por Polymarket; Finlandia libre (08-11-2026)",
-      "url": "https://airdropalert.com/blogs/polymarket-restricted-countries/"
-    },
-    {
-      "titulo": "CoinDesk: Polymarket suspende el trading tras un hackeo (29-10-2026)",
-      "url": "https://www.coindesk.com/markets/2026/10/29/polymarket-suspends-trading-after-third-party-breach-leads-to-user-losses"
-    },
-    {
-      "titulo": "Fingerlakes1: Noruega bloquea 238 webs; Polymarket solo avisada, sin bloqueo final (17-11-2026)",
-      "url": "https://www.fingerlakes1.com/2026/11/17/new-york-takes-kalshi-to-court-as-norway-blocks-hundreds-of-sites-6-things-crypto-bettors-should-know/"
-    },
-    {
-      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 17-11-2026)",
+      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 19-11-2026)",
       "url": "https://docs.polymarket.com/api-reference/geoblock"
+    },
+    {
+      "titulo": "StartPolymarket: Finlandia accesible (act. 03-11-2026)",
+      "url": "https://startpolymarket.com/countries/finland/"
+    },
+    {
+      "titulo": "Finance Magnates: Polymarket busca licencia financiera en la UE (23-09-2026)",
+      "url": "https://www.financemagnates.com/fintech/polymarket-wants-financial-status-in-europe-but-it-may-come-with-a-retail-ban/"
+    },
+    {
+      "titulo": "Dagens PS: Noruega quiere bloquear Polymarket; Suecia no puede (08-10-2026)",
+      "url": "https://www.dagensps.se/bors-finans/norge-vill-blockera-polymarket-sverige-saknar-verktyget/"
+    },
+    {
+      "titulo": "EMTA (Estonia): lista de webs de juego bloqueadas (act. 02-10-2026)",
+      "url": "https://emta.ee/ariklient/registreerimine-ettevotlus/hasartmangukorraldajale/blokeeritud-hasartmangu"
     },
     {
       "titulo": "Vero: tributación de ganancias de juego fuera de la UE/EEE (2023)",
@@ -105,14 +105,6 @@
     {
       "titulo": "Vero: resolución KVL 39/2025 sobre juego fuera del EEE",
       "url": "https://www.vero.fi/syventavat-vero-ohjeet/ennakkoratkaisut/354985/kvl0392025/"
-    },
-    {
-      "titulo": "AffPapa: Finlandia concede las primeras 12 licencias; apertura 1-7-2027 (29-10-2026)",
-      "url": "https://affpapa.com/finland-grants-first-12-online-gambling-licenses/"
-    },
-    {
-      "titulo": "European Gaming: Dinamarca bloquea Polymarket (20-08-2026)",
-      "url": "https://europeangaming.eu/portal/latest-news/2026/08/20/212965/denmark-blocks-polymarket-and-97-other-sites/"
     },
     {
       "titulo": "Polymarket: qué se puede hacer en países «solo cerrar»",
