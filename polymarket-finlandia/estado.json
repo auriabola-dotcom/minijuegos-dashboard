@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-19T08:10:00+01:00",
+  "revisado": "2026-11-20T08:10:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,7 +79,7 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 19-11-2026)",
+      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 20-11-2026)",
       "url": "https://docs.polymarket.com/api-reference/geoblock"
     },
     {
@@ -93,6 +93,10 @@
     {
       "titulo": "Dagens PS: Noruega quiere bloquear Polymarket; Suecia no puede (08-10-2026)",
       "url": "https://www.dagensps.se/bors-finans/norge-vill-blockera-polymarket-sverige-saknar-verktyget/"
+    },
+    {
+      "titulo": "E24: Noruega notifica bloqueo DNS de Polymarket, sin decisión final (08-10-2026)",
+      "url": "https://e24.no/naeringsliv/i/77p9XB/lotteritilsynet-blokkerer-polymarket"
     },
     {
       "titulo": "EMTA (Estonia): lista de webs de juego bloqueadas (act. 02-10-2026)",
