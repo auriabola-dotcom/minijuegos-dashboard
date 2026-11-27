@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-26T08:10:00+01:00",
+  "revisado": "2026-11-27T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,7 +79,7 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 24-11-2026)",
+      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 27-11-2026)",
       "url": "https://docs.polymarket.com/api-reference/geoblock.md"
     },
     {
@@ -87,8 +87,8 @@
       "url": "https://airdropalert.com/blogs/polymarket-restricted-countries/"
     },
     {
-      "titulo": "AffPapa: Noruega notifica bloqueo de Polymarket, aún sin decisión final (12-10-2026)",
-      "url": "https://affpapa.com/norway-to-block-kalshi-polymarket-60-more-illegal-websites/"
+      "titulo": "SBC News: el Parlamento noruego debate más restricciones; sin bloqueo final (23-11-2026)",
+      "url": "https://sbcnews.co.uk/europe/2026/11/23/norway-prediction-markets/"
     },
     {
       "titulo": "Finance Magnates: Polymarket busca licencia financiera en la UE (23-09-2026)",
