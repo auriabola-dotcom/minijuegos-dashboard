@@ -1,6 +1,6 @@
 {
   "pais": "Finlandia",
-  "revisado": "2026-11-27T08:05:00+01:00",
+  "revisado": "2026-11-28T08:05:00+01:00",
   "nivel": "ambar",
   "etiqueta": "Todo bien, con vigilancia",
   "titular": "Puedes usar Polymarket con normalidad. Nada cambia hasta, como pronto, julio de 2027.",
@@ -79,12 +79,12 @@
   ],
   "fuentes": [
     {
-      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 27-11-2026)",
+      "titulo": "Polymarket API: lista oficial de geobloqueo (FI no aparece, 28-11-2026)",
       "url": "https://docs.polymarket.com/api-reference/geoblock.md"
     },
     {
-      "titulo": "AirdropAlert: países restringidos por Polymarket, Finlandia sin restricción (08-11-2026)",
-      "url": "https://airdropalert.com/blogs/polymarket-restricted-countries/"
+      "titulo": "Storting: comisión rechaza más restricciones a mercados de predicción; bloqueo DNS solo notificado (17-11-2026)",
+      "url": "https://www.stortinget.no/globalassets/pdf/innstillinger/stortinget/2026-2027/inns-202627-052s.pdf"
     },
     {
       "titulo": "SBC News: el Parlamento noruego debate más restricciones; sin bloqueo final (23-11-2026)",
